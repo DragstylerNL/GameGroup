@@ -1,1 +1,1 @@
-this is the file whit's will contain every unity file
+this is the file which will contain every unity file
