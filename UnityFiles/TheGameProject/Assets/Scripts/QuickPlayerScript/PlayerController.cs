@@ -12,4 +12,41 @@ public class PlayerController : MonoBehaviour
 
     // groundCollider zorgt voor detectie van Ground
     public Transform GroundCollider;
+    // sta je op de grond ja/nee
+    private bool grounded = false;
+
+    public float playerSpeed = 100;
+
+    void Start()
+    {
+        // verkrijg het motor script
+        motor = GetComponent<PlayerMotor>();
+    }
+
+    void Update()
+    {
+        //check of de Jump-button wordt ingedrukt
+        bool _jumpInput = Input.GetButton("Jump");
+        
+        // roep jump (stuff) aan
+        jump(_jumpInput);
+        // beweging 
+        Move();
+    }
+
+    void jump(bool jumpInput)
+    {
+        // kijk of je op de grond staat of niet
+        grounded = Physics2D.Linecast(transform.position, GroundCollider.position, 1 << LayerMask.NameToLayer("Ground"));
+        //geef door of je op de grond staat ja of nee
+        motor.GroundedOrNot(grounded);
+        // roep jump in motor aan
+        motor.Jump(jumpInput);
+    }
+
+    void Move()
+    {
+        float _speed = playerSpeed;
+        motor.Move(_speed);
+    }
 }
