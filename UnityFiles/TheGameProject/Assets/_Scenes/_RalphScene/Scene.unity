@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 769333354}
   m_Layer: 8
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,7 +237,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4808311828663656, guid: 37c9682d4cd0c2349a574ce1b3288e9a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 4808311828663656, guid: 37c9682d4cd0c2349a574ce1b3288e9a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -314,6 +314,11 @@ Prefab:
     - target: {fileID: 4385842031212680, guid: f5b0ce3ae27fd9c45b70bb29a6d3937d, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61483139952211836, guid: f5b0ce3ae27fd9c45b70bb29a6d3937d,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5b0ce3ae27fd9c45b70bb29a6d3937d, type: 2}
