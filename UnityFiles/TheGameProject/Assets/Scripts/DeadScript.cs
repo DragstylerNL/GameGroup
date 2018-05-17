@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class destroyOldPlatform : MonoBehaviour {
+public class DeadScript : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
