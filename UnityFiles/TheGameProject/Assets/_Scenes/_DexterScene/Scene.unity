@@ -194,6 +194,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &610856079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 610856080}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &610856080
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 610856079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.4776162, y: -0.07967156, z: 0.36288828}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204020731
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +233,7 @@ GameObject:
   - component: {fileID: 1204020734}
   - component: {fileID: 1204020733}
   - component: {fileID: 1204020732}
+  - component: {fileID: 1204020736}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -286,12 +315,32 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1204020731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.06, y: 0.10228206, z: 0.25474766}
+  m_LocalPosition: {x: 4.71, y: 0.10228206, z: 0.25474766}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1204020736
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1204020731}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2055300708
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +354,7 @@ GameObject:
   - component: {fileID: 2055300713}
   - component: {fileID: 2055300709}
   m_Layer: 0
-  m_Name: Power-up
+  m_Name: Power-up(demo)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,3 +451,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb798b8e470fa4834baa6777a9c69337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sizeEffect: 1.4
+  pickupEffect: {fileID: 610856079}
