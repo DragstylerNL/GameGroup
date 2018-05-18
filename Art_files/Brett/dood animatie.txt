@@ -1,0 +1,2 @@
+explosie dood= 
+als je dood gaat door een raket op de grond, ontploft je karakter behalve zijn schoenen en rennen de schoenen door
