@@ -4,7 +4,7 @@
 public class PlayerMotor : MonoBehaviour
 {
     // spring snelheid
-    [Range(1, 10)]
+    [Range(1, 20)]
     public float jumpVelocity;
     // val multiplier
     public float fallMultiplier = 2.5f;

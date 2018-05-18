@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4374415257612076}
   - component: {fileID: 114751916997956148}
+  - component: {fileID: 50576778983057516}
   m_Layer: 8
   m_Name: '#testPrefab2'
   m_TagString: Ground
@@ -114,6 +115,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1610625779290818}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!50 &50576778983057516
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1384061566556820}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!61 &61324666908834984
 BoxCollider2D:
   m_ObjectHideFlags: 1
