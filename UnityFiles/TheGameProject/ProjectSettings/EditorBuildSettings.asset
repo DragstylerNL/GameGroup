@@ -4,4 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/_DexterScene/StartMenu.unity
+    guid: b7c64200e980e47278c963beea48f2c0
+  - enabled: 1
+    path: Assets/_Scenes/_DexterScene/Scene.unity
+    guid: 2782c115849402e4d86b73a45019876b
+  - enabled: 1
+    path: Assets/_Scenes/_DexterScene/ScoreBoards.unity
+    guid: 6e14accdc9dfd498ca5ebb0f83967559
+  - enabled: 1
+    path: Assets/_Scenes/_DexterScene/Options.unity
+    guid: bdd2ed211bb614d29989d55109563527
+  m_configObjects: {}
