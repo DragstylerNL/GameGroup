@@ -40,7 +40,7 @@ public class PlayerMotor : MonoBehaviour
         if (isJumpPressed && grounded && jumpTimer < 0.1)
         {
             // spring
-            rb.velocity += Vector2.up * jumpVelocity;
+            rb.velocity = Vector2.up * jumpVelocity;
             // set de timer op .2 zotat je niet in dezelfde frame weer kan springen.
             jumpTimer = 0.2f;
         }
