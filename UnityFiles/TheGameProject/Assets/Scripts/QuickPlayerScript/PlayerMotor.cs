@@ -47,7 +47,7 @@ public class PlayerMotor : MonoBehaviour
             // set de timer op .2 zotat je niet in dezelfde frame weer kan springen.
             jumpTimer = 0.2f;
         }
-        if (!isJumpPressed)
+        if (!isJumpPressed && grounded)
             noJumpInput = true;
     }
 
