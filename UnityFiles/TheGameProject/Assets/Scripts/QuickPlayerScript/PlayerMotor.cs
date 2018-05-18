@@ -18,6 +18,8 @@ public class PlayerMotor : MonoBehaviour
     private float jumpTimer;
     // is 'spring' ingedrukt ja/nee
     private bool isJumpPressed;
+    // spring is weer losgelaten
+    private bool noJumpInput = true;
 
     // rigidbody rb
     private Rigidbody2D rb;
@@ -37,13 +39,16 @@ public class PlayerMotor : MonoBehaviour
         // private variabel aanpassen
         isJumpPressed = jumpInput;
         // is jump ingedrukt & staan we op de grond & is de jumptimer weer klein genoeg
-        if (isJumpPressed && grounded && jumpTimer < 0.1)
+        if (isJumpPressed && grounded && noJumpInput &&jumpTimer < 0.1)
         {
+            noJumpInput = false;
             // spring
             rb.velocity = Vector2.up * jumpVelocity;
             // set de timer op .2 zotat je niet in dezelfde frame weer kan springen.
             jumpTimer = 0.2f;
         }
+        if (!isJumpPressed)
+            noJumpInput = true;
     }
 
     public void Move(float _speed)
