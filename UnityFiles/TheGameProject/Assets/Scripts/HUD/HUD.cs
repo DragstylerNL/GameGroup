@@ -14,7 +14,7 @@ public class HUD : MonoBehaviour {
     private int points = 20;
 
     //dead controls the 
-    private bool dead = false, start = false;
+    private bool dead = false, start = true;
 
     //public variables:
     //the speed the timer will remove air(health)
@@ -56,7 +56,7 @@ public class HUD : MonoBehaviour {
         //then just reset the sIndex to be the full health sprite AND shift over to the next health bar
         if (sIndex > sprites.Length - 1 && aIndex != airImages.Length - 1 && !dead) {
             aIndex++;
-            sIndex = 1;
+            sIndex = 0;
         }
 
         //aIndex is for the which health bar to be focused on
@@ -81,48 +81,49 @@ public class HUD : MonoBehaviour {
     //this starts the timer for the air bar
     public void startTimer()
     {
-        this.start = true;
+        start = true;
     }
 
     //stops the timer for the air bar
     public void stopTimer()
     {
-        this.start = false;
+        start = false;
     }
 
     //removes 1 air point
     public void takeDamage()
     {
         if (!dead) {
-            if (sIndex > sprites.Length - 1)
-                this.sIndex = 1;
-            else if (sIndex > 0)
-                this.sIndex++;
+            if (sIndex > sprites.Length - 1) {
+                sIndex = 1;
+            } else if (sIndex >= 0) {
+                sIndex++;
+            }
         }
     }
 
     //adds the given amount of points
     public void addPoints(int amount)
     {
-        this.points += amount;
+        points += amount;
     }
 
     //subtracts the given amount of points
     public void subPoints(int amount)
     {
-        this.points -= amount;
+        points -= amount;
     }
 
     //sets the points to the given amount
     public void setPoints(int amount)
     {
-        this.points = amount;
+        points = amount;
     }
 
     //resets the points to 0 OR optionally you can send an int along
     public void resetPoints(int amount = 0)
     {
-        this.points = amount;
+        points = amount;
     }
 
     //returns the dead variable to see if player is dead or not
