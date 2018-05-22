@@ -30,13 +30,15 @@ public class ObjectSpawner : MonoBehaviour {
         if(timePast > timer)
         {
             // random aantal platforms 
-            int _rnd = Mathf.CeilToInt(Random.value * 3);
+            int _rnd = Mathf.CeilToInt(Random.value * 3) - 1;
 
             for(int i = 0; i < _rnd; i++)
             {
                 int _rndPrefab = Mathf.CeilToInt(Random.value * prefabs.Length) - 1;
                 Instantiate(prefabs[_rndPrefab], spawnPositions[i]);
             }
+
+            Instantiate(prefabs[2], spawnPositions[3]);
 
             // timePast weer naar 0
             timePast = 0;
