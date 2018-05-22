@@ -384,7 +384,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 1.63
+  m_EdgeRadius: 0
 --- !u!23 &2055300710
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -452,4 +452,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeEffect: 1.4
+  effectDuration: 4
   pickupEffect: {fileID: 610856079}
