@@ -10,11 +10,16 @@ public class ObjectSpawner : MonoBehaviour {
     //alle spawnable objects
     public Object[] prefabs;
 
+    // ondergrond prefab
+    public Object ground;
+
     // timer voordat de nieuwe platform wordt gemaakt
     [Range(0.5f, 5f)]
-    public float timer;
+    public float timerGround;
+    public float timerPlatform;
     // tijd bijhouder
-    private float timePast;
+    private float timePastForGround;
+    private float timePastForPlatforms;
 
 
     void Start () {
@@ -23,26 +28,44 @@ public class ObjectSpawner : MonoBehaviour {
 	
 
 	void Update () {
+
+        SpawnGround();
+        SpawnPlatforms();
+
+    }
+
+    void SpawnGround()
+    {
         // voeg vergaande tijd toe
-        timePast += Time.deltaTime;
+        timePastForGround += Time.deltaTime;
 
         // kijk of er genoeg tijd is vergaan om een nieuwe prefab te spawnen
-        if(timePast > timer)
+        if (timePastForGround > timerGround)
         {
-            // random aantal platforms 
-            int _rnd = Mathf.CeilToInt(Random.value * 3) - 1;
+            //grond plaatsen
+            Instantiate(ground, spawnPositions[1]);
 
-            for(int i = 0; i < _rnd; i++)
+            //reset
+            timePastForGround = 0;
+        }
+    }
+
+    void SpawnPlatforms()
+    {
+        // voeg vergaande tijd toe
+        timePastForPlatforms += Time.deltaTime;
+
+        if (timePastForPlatforms > timerPlatform) {
+            // random aantal platforms 
+            int i = Mathf.CeilToInt(Random.value * 2);
+            if (i == 2)
             {
                 int _rndPrefab = Mathf.CeilToInt(Random.value * prefabs.Length) - 1;
-                Instantiate(prefabs[_rndPrefab], spawnPositions[i]);
+                Instantiate(prefabs[_rndPrefab], spawnPositions[0]);
             }
 
-            Instantiate(prefabs[2], spawnPositions[3]);
-
-            // timePast weer naar 0
-            timePast = 0;
+            //reset
+            timePastForPlatforms = 0;
         }
-
-	}
+    }
 }

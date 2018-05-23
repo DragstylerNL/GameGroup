@@ -37,7 +37,7 @@ public class ObjectController : MonoBehaviour {
         if (collider2D != null)
         {
             float _playerY = PlayerTransform.position.y;
-            if (_playerY < ( platformY + 0.5))
+            if (_playerY < ( platformY + 0.4))
                 collider2D.enabled = false;
             else
                 collider2D.enabled = true;
