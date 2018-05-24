@@ -11,7 +11,7 @@ public class HUD : MonoBehaviour {
     //position of the array with sprites or gameObjects
     private int sIndex = 0, aIndex = 0;
     //amount to display on score gameObject
-    private int points = 20;
+    private int points = 0;
 
     //dead controls the 
     private bool dead = false, start = true;
@@ -43,11 +43,13 @@ public class HUD : MonoBehaviour {
         //if the timer has started run this code
         if (start) {
             //add to timer contantly
-            timer++;
-            //if timer divided by 60 is equal to 0 and the player isn't dead sIndex++
-            if (timer % timerSpeed == 0 && !dead) {
+            timer += Time.deltaTime * 60;
+            //if timer is bigger then the timerSpeed and the player isn't dead sIndex++
+            if (timer > timerSpeed && !dead) {
                 //sIndex (Sprite Index) puts the right image in the gameObject Image spots
                 sIndex++;
+                // reset timer to 0
+                timer -= timerSpeed;
             }
         }
 
