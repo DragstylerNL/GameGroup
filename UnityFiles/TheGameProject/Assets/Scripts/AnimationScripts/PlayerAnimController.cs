@@ -6,7 +6,7 @@ public class PlayerAnimController : MonoBehaviour {
 
     Animator anim;
     PlayerController playerController;
-    bool isJumping;
+    bool isJumping, isFalling;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +17,11 @@ public class PlayerAnimController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if (!playerController.grounded)
+            isFalling = true;
+        else
+            isFalling = false;
+
         if(playerController._jumpInput) {
             isJumping = true;
         }
@@ -25,6 +30,7 @@ public class PlayerAnimController : MonoBehaviour {
         }
 
         anim.SetBool("isJumping", isJumping);
+        anim.SetBool("isFalling", isFalling);
 		
 	}
 }
