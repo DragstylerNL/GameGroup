@@ -8,6 +8,10 @@ TextureImporter:
     21300006: scaled sprite sheet 1_3
     21300008: scaled sprite sheet 1_4
     21300010: scaled sprite sheet 1_5
+    21300012: scaled sprite sheet 1_6
+    21300014: scaled sprite sheet 1_7
+    21300016: scaled sprite sheet 1_8
+    21300018: scaled sprite sheet 1_9
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -96,7 +100,7 @@ TextureImporter:
         width: 156
         height: 150
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -116,7 +120,7 @@ TextureImporter:
         width: 156
         height: 168
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,7 +140,7 @@ TextureImporter:
         width: 139
         height: 168
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -156,7 +160,7 @@ TextureImporter:
         width: 114
         height: 174
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -176,7 +180,7 @@ TextureImporter:
         width: 132
         height: 174
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,13 +200,93 @@ TextureImporter:
         width: 150
         height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 96aabbadcd349c94999ea62003e28718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scaled sprite sheet 1_6
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 676
+        width: 156
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f612727a6738cf40a51dc1107e8cf3c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scaled sprite sheet 1_7
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 677
+        width: 155
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8e43755693bf94daf6610cfa509f97
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scaled sprite sheet 1_8
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 682
+        width: 162
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcfb92bc3e66a134d827931176efa045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scaled sprite sheet 1_9
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 670
+        width: 144
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa81395736ba6a743aadbf03c2f153ae
       vertices: []
       indices: 
       edges: []
