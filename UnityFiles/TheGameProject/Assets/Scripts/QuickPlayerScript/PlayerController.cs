@@ -13,9 +13,11 @@ public class PlayerController : MonoBehaviour
     // groundCollider zorgt voor detectie van Ground
     public Transform GroundCollider;
     // sta je op de grond ja/nee
-    private bool grounded = false;
+    public bool grounded = false;
 
     public float playerSpeed = 100;
+
+    public bool _jumpInput;
 
     void Start()
     {
@@ -26,7 +28,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //check of de Jump-button wordt ingedrukt
-        bool _jumpInput = Input.GetButton("Jump");
+        _jumpInput = Input.GetButton("Jump");
         
         // roep jump (stuff) aan
         jump(_jumpInput);
