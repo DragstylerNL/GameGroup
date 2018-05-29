@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUp : MonoBehaviour
+public class PowerUpBiggerSize : MonoBehaviour
 {
 
     public float sizeEffect = 1.4f;
