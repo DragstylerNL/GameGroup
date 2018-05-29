@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 4644758674500276}
   - component: {fileID: 114747790504416364}
   - component: {fileID: 61190304510663412}
+  - component: {fileID: 114602930073009570}
   m_Layer: 0
   m_Name: BundeledRockets
   m_TagString: Untagged
@@ -433,6 +434,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartBonus: 120
   timeMultiplier: 1.5
+--- !u!114 &114602930073009570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1902699728643800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb41bb12864742442aba7d4adb89f6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EndOffTheLine: 5
 --- !u!114 &114747790504416364
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4077,7 +4090,7 @@ ParticleSystem:
   LightsModule:
     enabled: 1
     ratio: 0
-    light: {fileID: 108802469622386746, guid: 3eadc0402e3feec4f82f03dcd0f06915, type: 2}
+    light: {fileID: 0}
     randomDistribution: 1
     color: 1
     range: 1
@@ -8608,7 +8621,7 @@ ParticleSystem:
   LightsModule:
     enabled: 1
     ratio: 0
-    light: {fileID: 108802469622386746, guid: 3eadc0402e3feec4f82f03dcd0f06915, type: 2}
+    light: {fileID: 0}
     randomDistribution: 1
     color: 1
     range: 1
@@ -13139,7 +13152,7 @@ ParticleSystem:
   LightsModule:
     enabled: 1
     ratio: 0
-    light: {fileID: 108802469622386746, guid: 3eadc0402e3feec4f82f03dcd0f06915, type: 2}
+    light: {fileID: 0}
     randomDistribution: 1
     color: 1
     range: 1
