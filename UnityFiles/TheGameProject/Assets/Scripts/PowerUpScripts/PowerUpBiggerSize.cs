@@ -6,7 +6,7 @@ public class PowerUpBiggerSize : MonoBehaviour
 {
 
     //public float sizeEffect = 1.4f;
-    public float effectDuration = 4f;
+    public float effectDuration = 6f;
     public float speed = 10;
 
     private Transform ts;
@@ -31,14 +31,13 @@ public class PowerUpBiggerSize : MonoBehaviour
         if (other.CompareTag("Player")) // kijkt of ie de "Player" aanraakt en voert dan Pickup() funtie uit
         {
             animController.animate("hasRocketBoots", true);
-            Time.timeScale = 0;
             StartCoroutine( Pickup(other) );
         }
     }
 
     IEnumerator Pickup(Collider2D player)
     {
-        
+     
         //spawns een pickup effect
         Instantiate(pickupEffect, transform.position, transform.rotation);
 

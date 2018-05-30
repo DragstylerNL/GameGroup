@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour
     // sta je op de grond ja/nee
     public bool grounded = false;
 
-    public float playerSpeed = 100;
-
     public bool _jumpInput;
 
     void Start()

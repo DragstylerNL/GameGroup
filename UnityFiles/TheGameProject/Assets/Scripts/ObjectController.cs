@@ -10,13 +10,17 @@ public class ObjectController : MonoBehaviour {
     // de box colider van het object
     private BoxCollider2D collider2D;
     // de snelheid van het object(eigenllijk die van de player maar die beweegt niet)
-    public float speed = 10;
+
+    //public float speed = 10;
+
 
     // positie van de speler
     private GameObject[] player;
     private Transform PlayerTransform;
 
 	void Start () {
+
+
         // de positie van deze prefab ophalen
         ts = GetComponent<Transform>();
         platformY = ts.position.y;
