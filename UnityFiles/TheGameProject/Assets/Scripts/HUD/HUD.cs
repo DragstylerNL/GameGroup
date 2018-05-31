@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class HUD : MonoBehaviour {
+public class HUD : MonoBehaviour
+{
 
     //private variables:
     //timer
@@ -26,13 +28,15 @@ public class HUD : MonoBehaviour {
 
     //link to the text for the score UI
     public Text pointsText;
-    
+
     private void Update()
     {
 
         //these are to clean up the Update function
         updateHealth();
         updateScore();
+        if (dead)
+            beDeadThot();
 
     }
 
@@ -41,11 +45,13 @@ public class HUD : MonoBehaviour {
     {
 
         //if the timer has started run this code
-        if (start) {
+        if (start)
+        {
             //add to timer contantly
             timer += Time.deltaTime * 60;
             //if timer is bigger then the timerSpeed and the player isn't dead sIndex++
-            if (timer > timerSpeed && !dead) {
+            if (timer > timerSpeed && !dead)
+            {
                 //sIndex (Sprite Index) puts the right image in the gameObject Image spots
                 sIndex++;
                 // reset timer to 0
@@ -56,7 +62,8 @@ public class HUD : MonoBehaviour {
         //if sIndex is greater than the lenght of the Sprites array,
         //so if there are no more sprite to be rendered after this because the health is empty
         //then just reset the sIndex to be the full health sprite AND shift over to the next health bar
-        if (sIndex > sprites.Length - 1 && aIndex != airImages.Length - 1 && !dead) {
+        if (sIndex > sprites.Length - 1 && aIndex != airImages.Length - 1 && !dead)
+        {
             aIndex++;
             sIndex = 0;
         }
@@ -65,7 +72,8 @@ public class HUD : MonoBehaviour {
 
         //if the last bar has been reached AND sIndex is on its last sprite
         //player is dead
-        if (aIndex == airImages.Length - 1 && sIndex > sprites.Length - 2) {
+        if (aIndex == airImages.Length - 1 && sIndex > sprites.Length - 2)
+        {
             dead = true;
         }
 
@@ -95,10 +103,14 @@ public class HUD : MonoBehaviour {
     //removes 1 air point
     public void takeDamage()
     {
-        if (!dead) {
-            if (sIndex > sprites.Length - 1) {
+        if (!dead)
+        {
+            if (sIndex > sprites.Length - 1)
+            {
                 sIndex = 1;
-            } else if (sIndex >= 0) {
+            }
+            else if (sIndex >= 0)
+            {
                 sIndex++;
             }
         }
@@ -134,4 +146,8 @@ public class HUD : MonoBehaviour {
         return dead;
     }
 
+    private void beDeadThot()
+    {
+        SceneManager.LoadScene("DeathScreen");
+    }
 }

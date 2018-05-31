@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class DeadScript : MonoBehaviour {
 
+    private HUD hud;
+
+    void Start()
+    {
+        hud = FindObjectOfType<HUD>();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(other.gameObject);
+        hud.dead = true;
     }
 }

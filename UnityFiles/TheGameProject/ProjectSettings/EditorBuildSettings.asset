@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/_DexterScene/StartMenu.unity
+    path: Assets/_Scenes/_RalphScene/StartMenu.unity
     guid: b7c64200e980e47278c963beea48f2c0
   - enabled: 1
     path: Assets/_Scenes/_DexterScene/Scene.unity
@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/_DexterScene/Options.unity
     guid: bdd2ed211bb614d29989d55109563527
+  - enabled: 1
+    path: Assets/_Scenes/_RalphScene/Spelletje.unity
+    guid: 6f8a331e87c43624bbaa0575e7b78163
+  - enabled: 1
+    path: Assets/_Scenes/_RalphScene/DeathScreen.unity
+    guid: e79d68514cfbb4dd491193b97f06bfad
   m_configObjects: {}
