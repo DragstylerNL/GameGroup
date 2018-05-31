@@ -26,12 +26,13 @@ public class PowerUpBiggerSize : MonoBehaviour
 
 	void Update()
 	{
+        ts.position -= Vector3.right * speed * Time.deltaTime;
         platforms = GameObject.FindGameObjectsWithTag("Ground");
         foreach (GameObject obj in platforms) {
             if(obj != null)
                 obj.GetComponent<ObjectController>().speed = superSpeed;
         }
-        ts.position -= Vector3.right * speed * Time.deltaTime;
+        
     }
 
 	private void OnTriggerEnter2D(Collider2D other)
