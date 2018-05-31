@@ -78,6 +78,7 @@ public class ObjectSpawner : MonoBehaviour {
         }
     }
 
+<<<<<<< HEAD
     void SpawnPowerUp()
     {
         timePastForPowerUp += Time.deltaTime;
@@ -86,5 +87,9 @@ public class ObjectSpawner : MonoBehaviour {
         {
             Instantiate(pwrUp, pwUpSpawn);
         }
+=======
+    void SpawnPowerUpBoots(){
+        
+>>>>>>> 34b33f5b5194fa2085ffe599d388776bd30a2008
     }
 }
