@@ -11,6 +11,6 @@ public class DeadTimer : MonoBehaviour {
 	void Update () {
         Timer += Time.deltaTime;
         if (Timer > EndOffTheLine)
-            gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
 	}
 }

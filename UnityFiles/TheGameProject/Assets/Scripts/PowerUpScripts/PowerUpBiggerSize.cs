@@ -19,6 +19,7 @@ public class PowerUpBiggerSize : MonoBehaviour
 
 	void Start()
 	{
+        speler = GameObject.FindGameObjectWithTag("Player");
         ts = GetComponent<Transform>();
         animController = speler.GetComponent<PlayerAnimController>();
         platforms = GameObject.FindGameObjectsWithTag("Ground");
@@ -29,7 +30,7 @@ public class PowerUpBiggerSize : MonoBehaviour
         ts.position -= Vector3.right * speed * Time.deltaTime;
         platforms = GameObject.FindGameObjectsWithTag("Ground");
         foreach (GameObject obj in platforms) {
-            if(obj.gameObject != null)
+            if(obj.GetComponent<ObjectController>() != null)
                 obj.GetComponent<ObjectController>().speed = superSpeed;
         }
         
