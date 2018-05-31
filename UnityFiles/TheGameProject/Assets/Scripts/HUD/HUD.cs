@@ -14,7 +14,7 @@ public class HUD : MonoBehaviour {
     private int points = 0;
 
     //dead controls the 
-    private bool dead = false, start = true;
+    public bool dead = false, start = true;
 
     //public variables:
     //the speed the timer will remove air(health)
