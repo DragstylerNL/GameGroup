@@ -16,6 +16,7 @@ public class ObjectSpawner : MonoBehaviour
 
     // powerup prefab
     public Object pwrUp;
+    public Object rocket;
     // positie voor pwrUps om te spawnen
     public Transform pwUpSpawn;
 
@@ -45,6 +46,7 @@ public class ObjectSpawner : MonoBehaviour
         SpawnGround();
         SpawnPlatforms();
         SpawnPowerUp();
+        SpawnRocket();
 
     }
 
@@ -92,6 +94,16 @@ public class ObjectSpawner : MonoBehaviour
         if (timePastForPowerUp > timerPowerUp)
         {
             Instantiate(pwrUp, pwUpSpawn);
+            timePastForPowerUp = 0;
         }
     }
+
+    void SpawnRocket()
+    {
+        timePastForRocket += Time.deltaTime;
+        
+        if(timePastForRocket > timerRocket)
+        {
+
+        }
 }

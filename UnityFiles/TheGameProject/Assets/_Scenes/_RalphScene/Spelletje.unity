@@ -877,7 +877,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4465006140299852, guid: b7b9b726313fa43e49f8689583a1fb57, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 13.41
+      value: 9.57
       objectReference: {fileID: 0}
     - target: {fileID: 4465006140299852, guid: b7b9b726313fa43e49f8689583a1fb57, type: 2}
       propertyPath: m_LocalPosition.y
@@ -951,6 +951,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1597931375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1597931376}
+  m_Layer: 0
+  m_Name: pwrUpSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1597931376
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1597931375}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.57, y: -5.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2104606994}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1662677392
 Prefab:
   m_ObjectHideFlags: 0
@@ -995,6 +1023,22 @@ Prefab:
       propertyPath: timerGround
       value: 0.99
       objectReference: {fileID: 0}
+    - target: {fileID: 114858190106274680, guid: f5b0ce3ae27fd9c45b70bb29a6d3937d,
+        type: 2}
+      propertyPath: timerPowerUp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114858190106274680, guid: f5b0ce3ae27fd9c45b70bb29a6d3937d,
+        type: 2}
+      propertyPath: pwrUp
+      value: 
+      objectReference: {fileID: 1002020320454920, guid: b7b9b726313fa43e49f8689583a1fb57,
+        type: 2}
+    - target: {fileID: 114858190106274680, guid: f5b0ce3ae27fd9c45b70bb29a6d3937d,
+        type: 2}
+      propertyPath: pwUpSpawn
+      value: 
+      objectReference: {fileID: 1597931376}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5b0ce3ae27fd9c45b70bb29a6d3937d, type: 2}
   m_IsPrefabParent: 0
@@ -1080,3 +1124,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2104606994 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4385842031212680, guid: f5b0ce3ae27fd9c45b70bb29a6d3937d,
+    type: 2}
+  m_PrefabInternal: {fileID: 1662677392}
