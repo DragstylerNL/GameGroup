@@ -105,9 +105,9 @@ public class HUD : MonoBehaviour {
     }
 
     //adds the given amount of points
-    public void addPoints(int amount)
+    public void addPoints(float amount)
     {
-        points += amount;
+        points += Mathf.CeilToInt(amount);
     }
 
     //subtracts the given amount of points
