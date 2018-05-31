@@ -20,6 +20,7 @@ public class PowerUpBiggerSize : MonoBehaviour
 	void Start()
 	{
         speler = GameObject.FindGameObjectWithTag("Player");
+        print(speler);
         ts = GetComponent<Transform>();
         animController = speler.GetComponent<PlayerAnimController>();
         platforms = GameObject.FindGameObjectsWithTag("Ground");
