@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/_RalphScene/Spelletje.unity
     guid: 6f8a331e87c43624bbaa0575e7b78163
+  - enabled: 1
+    path: Assets/_Scenes/_RalphScene/DeathScreen.unity
+    guid: e79d68514cfbb4dd491193b97f06bfad
   m_configObjects: {}
