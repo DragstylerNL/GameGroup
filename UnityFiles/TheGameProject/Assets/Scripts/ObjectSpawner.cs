@@ -68,4 +68,8 @@ public class ObjectSpawner : MonoBehaviour {
             timePastForPlatforms = 0;
         }
     }
+
+    void SpawnPowerUpBoots(){
+        
+    }
 }

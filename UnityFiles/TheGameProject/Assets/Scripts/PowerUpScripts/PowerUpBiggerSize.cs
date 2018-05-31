@@ -10,6 +10,7 @@ public class PowerUpBiggerSize : MonoBehaviour
     public float speed = 10;
 
     private Transform ts;
+    private int superSpeed = 10;
     private PlayerAnimController animController;
     public GameObject speler;
     private GameObject[] platforms;
@@ -26,6 +27,10 @@ public class PowerUpBiggerSize : MonoBehaviour
 	void Update()
 	{
         platforms = GameObject.FindGameObjectsWithTag("Ground");
+        foreach (GameObject obj in platforms) {
+            if(obj != null)
+                obj.GetComponent<ObjectController>().speed = superSpeed;
+        }
         ts.position -= Vector3.right * speed * Time.deltaTime;
     }
 
@@ -54,14 +59,12 @@ public class PowerUpBiggerSize : MonoBehaviour
         yield return new WaitForSeconds(0.7f);
         
         //can't be exported outside of iEnumerator gives NULL reference
-        platforms = GameObject.FindGameObjectsWithTag("Ground");
-        foreach (GameObject obj in platforms) {
-            Debug.Log(obj);
-            obj.GetComponent<ObjectController>().speed = 10;
-        }
+        superSpeed = 20;
 
         //wacht x hoeveelheid secondes
         yield return new WaitForSeconds(effectDuration);
+        platforms = GameObject.FindGameObjectsWithTag("Ground");
+        superSpeed = 10;
 
         //draait het effect op de player terug
         //player.transform.localScale /= sizeEffect;
@@ -73,10 +76,6 @@ public class PowerUpBiggerSize : MonoBehaviour
 
     public void stopPlatforms()
     {
-        platforms = GameObject.FindGameObjectsWithTag("Ground");
-        foreach (GameObject obj in platforms) {
-            Debug.Log(obj);
-            obj.GetComponent<ObjectController>().speed = 0;
-        }
+        superSpeed = 0;
     }
 }
