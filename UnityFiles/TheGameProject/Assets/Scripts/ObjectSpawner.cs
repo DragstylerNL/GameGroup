@@ -92,6 +92,7 @@ public class ObjectSpawner : MonoBehaviour
         if (timePastForPowerUp > timerPowerUp)
         {
             Instantiate(pwrUp, pwUpSpawn);
+            timePastForPowerUp = 0;
         }
     }
 }
