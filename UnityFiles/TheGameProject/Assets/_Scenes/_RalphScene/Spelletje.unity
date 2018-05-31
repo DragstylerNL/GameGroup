@@ -328,7 +328,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4873810075115748, guid: e2c9a6fedffe93f478259e9f9250d240, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114764470045654082, guid: e2c9a6fedffe93f478259e9f9250d240,
         type: 2}
@@ -406,7 +406,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4938992215793234, guid: 37c9682d4cd0c2349a574ce1b3288e9a, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 61061840525415410, guid: 37c9682d4cd0c2349a574ce1b3288e9a,
         type: 2}
@@ -461,7 +461,7 @@ Prefab:
     - target: {fileID: 224240416269982046, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 224240416269982046, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
         type: 2}
@@ -531,6 +531,48 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 983308967}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1001 &1104512100
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4644758674500276, guid: cb170cbb569a37d49841c5fb55f62223, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 13.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644758674500276, guid: cb170cbb569a37d49841c5fb55f62223, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644758674500276, guid: cb170cbb569a37d49841c5fb55f62223, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644758674500276, guid: cb170cbb569a37d49841c5fb55f62223, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644758674500276, guid: cb170cbb569a37d49841c5fb55f62223, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644758674500276, guid: cb170cbb569a37d49841c5fb55f62223, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644758674500276, guid: cb170cbb569a37d49841c5fb55f62223, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4644758674500276, guid: cb170cbb569a37d49841c5fb55f62223, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: cb170cbb569a37d49841c5fb55f62223, type: 2}
+  m_IsPrefabParent: 0
 --- !u!114 &1122136229 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114023222027166648, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
@@ -646,7 +688,7 @@ Transform:
   - {fileID: 483933164}
   - {fileID: 1288016821}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1365782121
 GameObject:
@@ -844,7 +886,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1391938756
 Prefab:
@@ -883,7 +925,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4465006140299852, guid: b7b9b726313fa43e49f8689583a1fb57, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114522294176233916, guid: b7b9b726313fa43e49f8689583a1fb57,
         type: 2}
@@ -1021,5 +1063,5 @@ Transform:
   - {fileID: 277940328}
   - {fileID: 211263266}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
