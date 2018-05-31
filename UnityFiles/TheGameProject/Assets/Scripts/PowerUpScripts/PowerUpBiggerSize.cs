@@ -44,12 +44,19 @@ public class PowerUpBiggerSize : MonoBehaviour
             animController.animate("hasRocketBoots", true);
             stopPlatforms();
 
-            GameObject gm = GameObject.FindGameObjectWithTag("GameController");
-            ObjectSpawner objS = gm.GetComponent<ObjectSpawner>();
-            objS.dubbel = 2;
+            Gm();
 
             StartCoroutine( Pickup(other) );
         }
+    }
+
+    void Gm()
+    {
+        GameObject gm = GameObject.FindGameObjectWithTag("GameController");
+        ObjectSpawner objS = gm.GetComponent<ObjectSpawner>();
+        GameManager gmM = gm.GetComponent<GameManager>();
+        objS.dubbel = 2;
+        gmM.dubbel = 2;
     }
 
     IEnumerator Pickup(Collider2D player)
