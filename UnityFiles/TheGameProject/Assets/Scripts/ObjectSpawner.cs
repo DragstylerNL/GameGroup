@@ -13,13 +13,21 @@ public class ObjectSpawner : MonoBehaviour {
     // ondergrond prefab
     public Object ground;
 
+    // powerup prefab
+    public Object pwrUp;
+    // positie voor pwrUps om te spawnen
+    public Transform pwUpSpawn;
+
     // timer voordat de nieuwe platform wordt gemaakt
     [Range(0.5f, 5f)]
     public float timerGround;
     public float timerPlatform;
+    public float timerPowerUp;
+
     // tijd bijhouder
     private float timePastForGround;
     private float timePastForPlatforms;
+    private float timePastForPowerUp;
 
 
     void Start () {
@@ -31,6 +39,7 @@ public class ObjectSpawner : MonoBehaviour {
 
         SpawnGround();
         SpawnPlatforms();
+        SpawnPowerUp();
 
     }
 
@@ -69,7 +78,18 @@ public class ObjectSpawner : MonoBehaviour {
         }
     }
 
+<<<<<<< HEAD
+    void SpawnPowerUp()
+    {
+        timePastForPowerUp += Time.deltaTime;
+        
+        if(timePastForPowerUp > timerPowerUp)
+        {
+            Instantiate(pwrUp, pwUpSpawn);
+        }
+=======
     void SpawnPowerUpBoots(){
         
+>>>>>>> 34b33f5b5194fa2085ffe599d388776bd30a2008
     }
 }
