@@ -7,7 +7,7 @@ public class ButtonTest : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("Scene");
+        SceneManager.LoadScene("Spelletje");
     }
 
     //public void QuitGame()
