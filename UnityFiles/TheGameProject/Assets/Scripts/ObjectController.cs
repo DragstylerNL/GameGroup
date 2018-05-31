@@ -13,6 +13,7 @@ public class ObjectController : MonoBehaviour {
 
     public float speed = 10;
 
+    private bool fuck = true;
 
     // positie van de speler
     private GameObject[] player;
@@ -41,10 +42,16 @@ public class ObjectController : MonoBehaviour {
         if (collider2D != null && PlayerTransform.position != null)
         {
             float _playerY = 0;
-            if (PlayerTransform.position != null)
+            if (fuck)
             {
-                _playerY = PlayerTransform.position.y;
+                if (PlayerTransform.gameObject != null)
+                {
+                    _playerY = PlayerTransform.position.y;
+                }
+                else
+                    fuck = false;
             }
+            
 
             if (_playerY < ( platformY + 0.3))
                 collider2D.enabled = false;
