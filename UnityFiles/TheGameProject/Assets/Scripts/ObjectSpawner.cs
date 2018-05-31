@@ -24,11 +24,13 @@ public class ObjectSpawner : MonoBehaviour
     public float timerGround;
     public float timerPlatform;
     public float timerPowerUp;
+    public float timerRocket;
 
     // tijd bijhouder
     private float timePastForGround;
     private float timePastForPlatforms;
     private float timePastForPowerUp;
+    private float timePastForRocket;
 
 
     void Start()

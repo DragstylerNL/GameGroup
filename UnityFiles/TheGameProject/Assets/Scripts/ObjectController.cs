@@ -38,7 +38,7 @@ public class ObjectController : MonoBehaviour {
         ts.position -= Vector3.right * speed * Time.deltaTime;
 
         // ervoor zorgen dat je door het platform heen kan springen
-        if (collider2D != null)
+        if (collider2D != null && PlayerTransform.position != null)
         {
             float _playerY = PlayerTransform.position.y;
             if (_playerY < ( platformY + 0.3))
