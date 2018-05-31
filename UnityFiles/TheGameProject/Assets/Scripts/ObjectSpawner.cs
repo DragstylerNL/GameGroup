@@ -101,9 +101,10 @@ public class ObjectSpawner : MonoBehaviour
     void SpawnRocket()
     {
         timePastForRocket += Time.deltaTime;
-        
-        if(timePastForRocket > timerRocket)
+
+        if (timePastForRocket > timerRocket)
         {
 
         }
+    }
 }
