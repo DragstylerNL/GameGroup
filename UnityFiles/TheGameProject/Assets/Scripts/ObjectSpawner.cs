@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectSpawner : MonoBehaviour {
+public class ObjectSpawner : MonoBehaviour
+{
 
     // de 3 posities (hoogtes) waar prefabs kunnen spawnen
     public Transform[] spawnPositions;
@@ -30,12 +31,14 @@ public class ObjectSpawner : MonoBehaviour {
     private float timePastForPowerUp;
 
 
-    void Start () {
+    void Start()
+    {
 
     }
-	
 
-	void Update () {
+
+    void Update()
+    {
 
         SpawnGround();
         SpawnPlatforms();
@@ -64,7 +67,8 @@ public class ObjectSpawner : MonoBehaviour {
         // voeg vergaande tijd toe
         timePastForPlatforms += Time.deltaTime;
 
-        if (timePastForPlatforms > timerPlatform) {
+        if (timePastForPlatforms > timerPlatform)
+        {
             // random aantal platforms 
             int i = Mathf.CeilToInt(Random.value * 2);
             if (i == 2)
@@ -78,18 +82,14 @@ public class ObjectSpawner : MonoBehaviour {
         }
     }
 
-<<<<<<< HEAD
+
     void SpawnPowerUp()
     {
         timePastForPowerUp += Time.deltaTime;
-        
-        if(timePastForPowerUp > timerPowerUp)
+
+        if (timePastForPowerUp > timerPowerUp)
         {
             Instantiate(pwrUp, pwUpSpawn);
         }
-=======
-    void SpawnPowerUpBoots(){
-        
->>>>>>> 34b33f5b5194fa2085ffe599d388776bd30a2008
     }
 }
