@@ -43,6 +43,11 @@ public class PowerUpBiggerSize : MonoBehaviour
         {
             animController.animate("hasRocketBoots", true);
             stopPlatforms();
+
+            GameObject gm = GameObject.FindGameObjectWithTag("GameController");
+            ObjectSpawner objS = gm.GetComponent<ObjectSpawner>();
+            objS.dubbel = 2;
+
             StartCoroutine( Pickup(other) );
         }
     }

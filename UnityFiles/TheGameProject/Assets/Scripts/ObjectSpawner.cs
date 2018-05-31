@@ -20,6 +20,8 @@ public class ObjectSpawner : MonoBehaviour
     // positie voor pwrUps om te spawnen
     public Transform pwUpSpawn;
 
+    public int dubbel = 1;
+
     // timer voordat de nieuwe platform wordt gemaakt
     [Range(0.5f, 5f)]
     public float timerGround;
@@ -53,7 +55,7 @@ public class ObjectSpawner : MonoBehaviour
     void SpawnGround()
     {
         // voeg vergaande tijd toe
-        timePastForGround += Time.deltaTime;
+        timePastForGround += Time.deltaTime * dubbel;
 
         // kijk of er genoeg tijd is vergaan om een nieuwe prefab te spawnen
         if (timePastForGround > timerGround)
