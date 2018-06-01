@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1307296617923628}
   m_IsPrefabParent: 1
+--- !u!1 &1148481081108496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4513744704315680}
+  m_Layer: 0
+  m_Name: WarningSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1203384099518162
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,6 +84,21 @@ GameObject:
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1573409605111522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4835761644071286}
+  m_Layer: 0
+  m_Name: RocketSpawn
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138,8 +168,23 @@ Transform:
   - {fileID: 4917497373070932}
   - {fileID: 4721705368750948}
   - {fileID: 4698566004278794}
+  - {fileID: 4835761644071286}
+  - {fileID: 4513744704315680}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4513744704315680
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148481081108496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4385842031212680}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4558488496578096
 Transform:
@@ -205,6 +250,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4385842031212680}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4835761644071286
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1573409605111522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 35, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4385842031212680}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4917497373070932
 Transform:
@@ -302,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77933297329d7f34e88930a50e459a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dubbel: 1
 --- !u!114 &114858190106274680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,9 +381,14 @@ MonoBehaviour:
   - {fileID: 1295199586819222, guid: 2c31e5e1108f7cf41badf734ca273421, type: 2}
   ground: {fileID: 1976334857127250, guid: 052a3d95c3133a54787b279fd62d996d, type: 2}
   pwrUp: {fileID: 1002020320454920, guid: b7b9b726313fa43e49f8689583a1fb57, type: 2}
-  rocket: {fileID: 0}
+  rocket: {fileID: 1902699728643800, guid: cb170cbb569a37d49841c5fb55f62223, type: 2}
+  warning: {fileID: 1833081010064892, guid: cf7bdb67217ff7b4cb851d1a23980245, type: 2}
   pwUpSpawn: {fileID: 4698566004278794}
+  rocketSpawn: {fileID: 4835761644071286}
+  warningSpawn: {fileID: 4513744704315680}
+  playerPos: {fileID: 0}
+  dubbel: 1
   timerGround: 0.99
   timerPlatform: 1.5
   timerPowerUp: 20
-  timerRocket: 0
+  timerRocket: 5

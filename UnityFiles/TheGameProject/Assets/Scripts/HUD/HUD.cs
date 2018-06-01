@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class HUD : MonoBehaviour
 {
+    public Object BOOM;
 
     //private variables:
     //timer
@@ -149,5 +150,12 @@ public class HUD : MonoBehaviour
     private void beDeadThot()
     {
         SceneManager.LoadScene("DeathScreen");
+    }
+
+    public void Boom(Transform ts)
+    {
+        print("boom?");
+        Instantiate(BOOM, ts);
+        print("BOOM");
     }
 }

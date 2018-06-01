@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     private HUD hud;
+    public int dubbel = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -13,7 +14,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float _points = 100 * Time.deltaTime;
+        float _points = 100 * Time.deltaTime * dubbel;
         hud.addPoints(_points);
 	}
 }
