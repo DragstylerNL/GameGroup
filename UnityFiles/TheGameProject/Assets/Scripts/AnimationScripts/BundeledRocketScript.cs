@@ -25,6 +25,6 @@ public class BundeledRocketScript : MonoBehaviour {
     void SpinRocket()
     {
         timer += Time.deltaTime * 10 * timeMultiplier;
-        ts.position = new Vector3(ts.position.x,ts.position.y + (Mathf.Cos(timer + StartBonus)) / 5, 0);
+        ts.position = new Vector3(ts.position.x, ts.position.y + ((Mathf.Cos(timer + StartBonus)) / 5), 0);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour {
 
+    public Object BOOM;
     private Transform ts;
     private HUD hud;
 
@@ -14,14 +15,15 @@ public class Rocket : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        ts.position += Vector3.right * Time.deltaTime * -10;
+        ts.position += Vector3.right * Time.deltaTime * -20 ;
 	}
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Player")
-        {
+        { 
             hud = FindObjectOfType<HUD>();
+            hud.Boom(this.transform);
             hud.takeDamage();
             Destroy(this.gameObject);
         }
