@@ -932,6 +932,11 @@ Prefab:
       propertyPath: speler
       value: 
       objectReference: {fileID: 1818413438}
+    - target: {fileID: 114522294176233916, guid: b7b9b726313fa43e49f8689583a1fb57,
+        type: 2}
+      propertyPath: effectDuration
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7b9b726313fa43e49f8689583a1fb57, type: 2}
   m_IsPrefabParent: 0
