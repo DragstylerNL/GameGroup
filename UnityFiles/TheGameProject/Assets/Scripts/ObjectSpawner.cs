@@ -15,10 +15,16 @@ public class ObjectSpawner : MonoBehaviour
     public Object ground;
 
     // powerup prefab
+    public Object air;
     public Object pwrUp;
     public Object rocket;
+    public Object warning;
     // positie voor pwrUps om te spawnen
     public Transform pwUpSpawn;
+
+    public Transform rocketSpawn;
+    public Transform warningSpawn;
+    public Transform playerPos;
 
     public int dubbel = 1;
 
@@ -28,12 +34,14 @@ public class ObjectSpawner : MonoBehaviour
     public float timerPlatform;
     public float timerPowerUp;
     public float timerRocket;
+    public float timerAir;
 
     // tijd bijhouder
     private float timePastForGround;
     private float timePastForPlatforms;
     private float timePastForPowerUp;
     private float timePastForRocket;
+    private float timePastForAir;
 
 
     void Start()
@@ -49,6 +57,7 @@ public class ObjectSpawner : MonoBehaviour
         SpawnPlatforms();
         SpawnPowerUp();
         SpawnRocket();
+        SpawnAir();
 
     }
 
@@ -107,6 +116,21 @@ public class ObjectSpawner : MonoBehaviour
         if (timePastForRocket > timerRocket)
         {
 
+            rocketSpawn.position = new Vector3(rocketSpawn.position.x, playerPos.position.y);
+            warningSpawn.position = new Vector3(warningSpawn.position.x, playerPos.position.y);
+            Instantiate(rocket, rocketSpawn);
+            Instantiate(warning, warningSpawn);
+            timePastForRocket = 0;
+        }
+    }
+
+    void SpawnAir()
+    {
+        timePastForAir += Time.deltaTime;
+
+        if(timePastForAir > timerAir)
+        {
+            Instantiate(air);
         }
     }
 }
