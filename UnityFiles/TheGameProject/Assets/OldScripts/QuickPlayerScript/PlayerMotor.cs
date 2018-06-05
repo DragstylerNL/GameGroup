@@ -13,7 +13,7 @@ public class PlayerMotor : MonoBehaviour
     // sta je op de grond ja/nee
     private bool grounded = false;
     // player speed
-    private float speed;
+    public float speed = 3f;
     // timer zodat je niet 2 keer in 1 sec kan springen
     private float jumpTimer;
     // is 'spring' ingedrukt ja/nee
@@ -58,6 +58,9 @@ public class PlayerMotor : MonoBehaviour
 
     void Update()
     {
+
+        rb.velocity = new Vector2(speed, 0f);
+
         // de 2de jump per frame timer verkleinen wanner hoger dan 0
         if (jumpTimer > 0)
         {
@@ -67,10 +70,6 @@ public class PlayerMotor : MonoBehaviour
         if (rb.velocity.y < 0)
         {
             rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-        }
-        else if (rb.velocity.y > 0 && !isJumpPressed)
-        {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
     }
 
