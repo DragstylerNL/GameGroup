@@ -19,6 +19,8 @@ public class PowerUpBiggerSize : MonoBehaviour
 
 	void Start()
 	{
+        speler = GameObject.FindGameObjectWithTag("Player");
+        print(speler);
         ts = GetComponent<Transform>();
         animController = speler.GetComponent<PlayerAnimController>();
         platforms = GameObject.FindGameObjectsWithTag("Ground");
@@ -26,12 +28,13 @@ public class PowerUpBiggerSize : MonoBehaviour
 
 	void Update()
 	{
+        ts.position -= Vector3.right * speed * Time.deltaTime;
         platforms = GameObject.FindGameObjectsWithTag("Ground");
         foreach (GameObject obj in platforms) {
-            if(obj != null)
+            if(obj.GetComponent<ObjectController>() != null)
                 obj.GetComponent<ObjectController>().speed = superSpeed;
         }
-        ts.position -= Vector3.right * speed * Time.deltaTime;
+        
     }
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -40,8 +43,20 @@ public class PowerUpBiggerSize : MonoBehaviour
         {
             animController.animate("hasRocketBoots", true);
             stopPlatforms();
+
+            Gm();
+
             StartCoroutine( Pickup(other) );
         }
+    }
+
+    void Gm()
+    {
+        GameObject gm = GameObject.FindGameObjectWithTag("GameController");
+        ObjectSpawner objS = gm.GetComponent<ObjectSpawner>();
+        GameManager gmM = gm.GetComponent<GameManager>();
+        objS.dubbel = 2;
+        gmM.dubbel = 2;
     }
 
     IEnumerator Pickup(Collider2D player)
