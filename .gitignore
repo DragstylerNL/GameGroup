@@ -5,6 +5,13 @@
 /UnityFiles/TheGameProject/[Bb]uilds/
 /UnityFiles/TheGameProject/Assets/AssetStoreTools*
 
+/UnityFiles/SpaceLizard/[Ll]ibrary/
+/UnityFiles/SpaceLizard/[Tt]emp/
+/UnityFiles/SpaceLizard/[Oo]bj/
+/UnityFiles/SpaceLizard/[Bb]uild/
+/UnityFiles/SpaceLizard/[Bb]uilds/
+/UnityFiles/SpaceLizard/Assets/AssetStoreTools*
+
 # Visual Studio 2015 cache directory
 /UnityFiles/TheGameProject/.vs/
 
