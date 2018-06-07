@@ -20,6 +20,7 @@ namespace UnityStandardAssets._2D
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 
+
         private void Awake()
         {
             // Setting up references.
@@ -110,5 +111,12 @@ namespace UnityStandardAssets._2D
             theScale.x *= -1;
             transform.localScale = theScale;
         }
+
+        public void SetMaxSpeed(float speed)
+        {
+            m_MaxSpeed = speed;
+        }
     }
+
+
 }
