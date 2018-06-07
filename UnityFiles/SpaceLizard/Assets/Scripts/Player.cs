@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public float effectDuration = 5f;
+    public float effectDuration = 2f;
 
     UnityStandardAssets._2D.PlatformerCharacter2D platformerCharacter2D;
 
