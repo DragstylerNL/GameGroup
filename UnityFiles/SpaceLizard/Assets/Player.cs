@@ -18,11 +18,28 @@ public class Player : MonoBehaviour {
     {
         if(other.name == "RocketBoot") {
             Destroy(other.gameObject);
+            Debug.Log("werkt het???");
             StartCoroutine(Boot(other));
+        }
+
+        if (other.name == "Peper")
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Peper werkt");
+            StartCoroutine(Peper(other));
         }
     }
 
     IEnumerator Boot(Collider2D other)
+    {
+        //Instantiate(pickupEffect, transform.position, transform.rotation);
+
+        yield return new WaitForSeconds(0.0f);
+
+
+    }
+
+    IEnumerator Peper(Collider2D other)
     {
         //Instantiate(pickupEffect, transform.position, transform.rotation);
 
