@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+    public bool RocketInvincible = false;
     public float effectDuration = 2f;
 
     UnityStandardAssets._2D.PlatformerCharacter2D platformerCharacter2D;
