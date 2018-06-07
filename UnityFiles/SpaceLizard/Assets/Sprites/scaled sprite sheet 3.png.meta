@@ -5,6 +5,7 @@ TextureImporter:
     21300000: scaled sprite sheet 3_0
     21300002: scaled sprite sheet 3_1
     21300004: scaled sprite sheet 3_2
+    21300006: scaled sprite sheet 3_3
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -177,13 +178,33 @@ TextureImporter:
         width: 93
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 19e72c4b5434540f3b3bfa1bca0a935f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scaled sprite sheet 3_3
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 870
+        width: 36
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a597bf5f4adca495c9ebe87491cc68cb
       vertices: []
       indices: 
       edges: []
