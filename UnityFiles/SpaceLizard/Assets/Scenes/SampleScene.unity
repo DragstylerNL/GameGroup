@@ -192,7 +192,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4082459317141246, guid: 0006d0c44b1d34ae79e59401e7ea638e, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 14.25743
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4082459317141246, guid: 0006d0c44b1d34ae79e59401e7ea638e, type: 2}
       propertyPath: m_LocalRotation.x
@@ -331,6 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d83e72ade86904497b46da066dfc33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RocketInvincible: 0
   effectDuration: 2
 --- !u!1001 &752604349
 Prefab:
