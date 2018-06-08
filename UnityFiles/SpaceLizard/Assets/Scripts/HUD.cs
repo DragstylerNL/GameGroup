@@ -147,5 +147,8 @@ public class HUD : MonoBehaviour
         aIndex = 0;
         sIndex = 0;
         timer = 0f;
+        foreach(Image item in airImages) {
+            item.sprite = sprites[0];
+        }
     }
 }
