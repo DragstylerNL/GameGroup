@@ -217,7 +217,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1613571847343778, guid: 0d95a48785e76fd4a9934d7d23b3cb0e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114179331292347932, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 519420033}
+    - target: {fileID: 114179331292347932, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: resetAir
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d95a48785e76fd4a9934d7d23b3cb0e, type: 2}
@@ -337,6 +347,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0006d0c44b1d34ae79e59401e7ea638e, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &278331691 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114023222027166648, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 45653266}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,15 +459,16 @@ MonoBehaviour:
   start: 1
   timerSpeed: 60
   airImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 808675917}
+  - {fileID: 999141314}
+  - {fileID: 651778057}
+  - {fileID: 278331691}
   sprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 24505830a80407641aea804dd918dc3a, type: 3}
+  - {fileID: 21300004, guid: 24505830a80407641aea804dd918dc3a, type: 3}
+  - {fileID: 21300006, guid: 24505830a80407641aea804dd918dc3a, type: 3}
+  - {fileID: 21300008, guid: 24505830a80407641aea804dd918dc3a, type: 3}
+  - {fileID: 21300002, guid: 24505830a80407641aea804dd918dc3a, type: 3}
   pointsText: {fileID: 45653267}
 --- !u!4 &613050365 stripped
 Transform:
@@ -474,6 +491,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RocketInvincible: 0
   effectDuration: 2
+--- !u!114 &651778057 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114299694751927812, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 45653266}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &752604349
 Prefab:
   m_ObjectHideFlags: 0
@@ -520,6 +543,18 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ce4cbc241d3aca4da0b94a0ffa0d51f, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &808675917 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114169534812896718, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 45653266}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &999141314 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114116019298392894, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 45653266}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1493642602
 Prefab:
   m_ObjectHideFlags: 0

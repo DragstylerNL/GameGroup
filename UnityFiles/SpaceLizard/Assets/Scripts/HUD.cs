@@ -141,4 +141,11 @@ public class HUD : MonoBehaviour
     {
         SceneManager.LoadScene("DeathScreen");
     }
+
+    public void resetAir()
+    {
+        aIndex = 0;
+        sIndex = 0;
+        timer = 0f;
+    }
 }
