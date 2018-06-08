@@ -8,10 +8,13 @@ public class Player : MonoBehaviour {
     public float effectDuration = 2f;
 
     UnityStandardAssets._2D.PlatformerCharacter2D platformerCharacter2D;
+    public GameObject camera;
+    HUD hud;
 
 	// Use this for initialization
 	void Start () {
         platformerCharacter2D = this.GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
+        hud = camera.GetComponent<HUD>();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +30,13 @@ public class Player : MonoBehaviour {
             StartCoroutine(Boot(other));
         }
 
+        if (other.name == "Zuurstof")
+        {
+            Destroy(other.gameObject);
+            Debug.Log("zuurstof werkt");
+            hud.resetAir();
+            //StartCoroutine(Boot(other));
+        }
         //if (other.name == "Peper")
         //{
         //    Destroy(other.gameObject);

@@ -217,7 +217,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1613571847343778, guid: 0d95a48785e76fd4a9934d7d23b3cb0e, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114179331292347932, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
         type: 2}
@@ -309,7 +309,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4082459317141246, guid: 0006d0c44b1d34ae79e59401e7ea638e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.49
+      value: 94.4
       objectReference: {fileID: 0}
     - target: {fileID: 4082459317141246, guid: 0006d0c44b1d34ae79e59401e7ea638e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -491,6 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RocketInvincible: 0
   effectDuration: 2
+  camera: {fileID: 519420028}
 --- !u!114 &651778057 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114299694751927812, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
