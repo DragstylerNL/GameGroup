@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:UnityFiles/SpaceLizard/Assets/_Scenes.meta
 guid: 3265719a8ddb74367a7b5d43eb184435
+=======
+guid: 7e701ac378afb4b46874e4a2fda08971
+>>>>>>> 8e1fbd9e6e64ee961e8324bfd4805a741d783204:UnityFiles/SpaceLizard/Assets/_Scenes.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
