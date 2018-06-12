@@ -10,7 +10,7 @@ public class HUD : MonoBehaviour
     //timer
     private float timer = 0f;
     //position of the array with sprites or gameObjects
-    private int sIndex = 0, aIndex = 0;
+    public int sIndex = 0, aIndex = 0;
     //amount to display on score gameObject
     private int points = 0;
 
@@ -20,6 +20,7 @@ public class HUD : MonoBehaviour
     //public variables:
     //the speed the timer will remove air(health)
     public int timerSpeed = 60;
+    public int health = 20;
 
     //arrays that hold the images and gameObjects for the air(health) UI
     public Image[] airImages;
@@ -30,6 +31,9 @@ public class HUD : MonoBehaviour
 
     private void Update()
     {
+        
+        aIndex = (int)Mathf.Ceil(health/5);
+        Debug.Log(aIndex);
 
         //these are to clean up the Update function
         updateHealth();
@@ -37,6 +41,7 @@ public class HUD : MonoBehaviour
         if (dead)
             beDeadThot();
 
+       
     }
 
     //Update health will update the health UI + the right numbers
@@ -50,25 +55,16 @@ public class HUD : MonoBehaviour
             //if timer is bigger then the timerSpeed and the player isn't dead sIndex++
             if (timer > timerSpeed && !dead) {
                 //sIndex (Sprite Index) puts the right image in the gameObject Image spots
-                sIndex++;
+                health--;
+                sIndex = health;
                 // reset timer to 0
                 timer -= timerSpeed;
             }
         }
 
-        //if sIndex is greater than the lenght of the Sprites array,
-        //so if there are no more sprite to be rendered after this because the health is empty
-        //then just reset the sIndex to be the full health sprite AND shift over to the next health bar
-        if (sIndex > sprites.Length - 1 && aIndex != airImages.Length - 1 && !dead) {
-            aIndex++;
-            sIndex = 0;
-        }
-
-        //aIndex is for the which health bar to be focused on
-
         //if the last bar has been reached AND sIndex is on its last sprite
         //player is dead
-        if (aIndex == airImages.Length - 1 && sIndex > sprites.Length - 2) {
+        if (aIndex == 0 && sIndex == 0) {
             dead = true;
         }
 
