@@ -12,7 +12,7 @@ public class HUD : MonoBehaviour
     //position of the array with sprites or gameObjects
     public int sIndex = 0, aIndex = 0;
     //amount to display on score gameObject
-    private int points = 0;
+    private int points = 0, prevHealth;
 
     //dead controls the 
     public bool dead = false, start = true;
@@ -32,7 +32,7 @@ public class HUD : MonoBehaviour
     private void Update()
     {
         
-        aIndex = (int)Mathf.Ceil(health/5);
+        aIndex = (int)Mathf.Ceil((health - 1)/5);
         Debug.Log(aIndex);
 
         //these are to clean up the Update function
@@ -47,6 +47,8 @@ public class HUD : MonoBehaviour
     //Update health will update the health UI + the right numbers
     private void updateHealth()
     {
+
+        prevHealth = health;
 
         //if the timer has started run this code
         if (start) {
@@ -69,7 +71,21 @@ public class HUD : MonoBehaviour
         }
 
         //update the UI images to the correct sprites last
+        if (health != prevHealth)
+            updateHealthBar();
+
+    }
+
+    private void updateHealthBar()
+    {
         airImages[aIndex].sprite = sprites[sIndex];
+
+        if (health <= 15)
+            airImages[airImages.Length - 1].sprite = sprites[0];
+        if (health <= 10)
+            airImages[airImages.Length - 2].sprite = sprites[0];
+        if (health <= 5)
+            airImages[airImages.Length - 3].sprite = sprites[0];
     }
 
     //updates the Score UI
@@ -91,16 +107,15 @@ public class HUD : MonoBehaviour
         start = false;
     }
 
-    //removes 1 air point
-    public void takeDamage()
+    //removes air(health) from player
+    public void takeDamage(int damage)
     {
-        if (!dead) {
-            if (sIndex > sprites.Length - 1) {
-                sIndex = 1;
-            } else if (sIndex >= 0) {
-                sIndex++;
-            }
+        health -= damage;
+        if(health <= 0) {
+            dead = true;
         }
+
+        updateHealthBar();
     }
 
     //adds the given amount of points
@@ -140,11 +155,9 @@ public class HUD : MonoBehaviour
 
     public void resetAir()
     {
-        aIndex = 0;
-        sIndex = 0;
-        timer = 0f;
+        health = 20;
         foreach(Image item in airImages) {
-            item.sprite = sprites[0];
+            item.sprite = sprites[4];
         }
     }
 }

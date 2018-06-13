@@ -22,13 +22,11 @@ public class Rocket : MonoBehaviour {
         if(other.gameObject.tag == "Player")
         { 
             hud = FindObjectOfType<HUD>();
-<<<<<<< HEAD
+
             //hud.Boom(this.transform);
-            hud.takeDamage();
+            hud.takeDamage(1);
             Destroy(this.gameObject);
-=======
             
->>>>>>> 9916afb5827af657e45f5c65068edd1651ac6d0a
         }
     }
 }
