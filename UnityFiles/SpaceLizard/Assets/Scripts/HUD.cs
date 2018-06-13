@@ -76,10 +76,13 @@ public class HUD : MonoBehaviour
 
     }
 
+    //Call this function to update the healthbar realtime instead on timer speed
     private void updateHealthBar()
     {
+        //set the sprite to the right sprites
         airImages[aIndex].sprite = sprites[sIndex];
 
+        //make sure they are empty if health is low enough
         if (health <= 15)
             airImages[airImages.Length - 1].sprite = sprites[0];
         if (health <= 10)
@@ -110,11 +113,17 @@ public class HUD : MonoBehaviour
     //removes air(health) from player
     public void takeDamage(int damage)
     {
+
+        //remove amount of damage from health
         health -= damage;
+
+        //if health is lower than 0 after the damage player is dead
         if(health <= 0) {
             dead = true;
         }
 
+        //update the healthbar individual from the timer speed
+        //for instant change in the ui
         updateHealthBar();
     }
 
@@ -155,7 +164,10 @@ public class HUD : MonoBehaviour
 
     public void resetAir()
     {
+        //set health to max again
         health = 20;
+
+        //set all the sprites back to the full one
         foreach(Image item in airImages) {
             item.sprite = sprites[4];
         }
