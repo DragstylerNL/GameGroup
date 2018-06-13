@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour {
 
-    public Object BOOM;
     private Transform ts;
     private HUD hud;
 
@@ -23,9 +22,13 @@ public class Rocket : MonoBehaviour {
         if(other.gameObject.tag == "Player")
         { 
             hud = FindObjectOfType<HUD>();
+<<<<<<< HEAD
             //hud.Boom(this.transform);
             hud.takeDamage();
             Destroy(this.gameObject);
+=======
+            
+>>>>>>> 9916afb5827af657e45f5c65068edd1651ac6d0a
         }
     }
 }
