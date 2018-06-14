@@ -8,9 +8,8 @@ public class FollowThePlayer : MonoBehaviour {
     
     private Transform ts_pl;
 
-    public bool enable_X;
-    public bool enable_Y;
-    public bool enable_Z;
+    public bool enable_X, enable_Y, enable_Z;
+    public float ofset_X, ofset_Y, ofset_Z;
 
     // Use this for initialization
     void Start () {
@@ -27,6 +26,7 @@ public class FollowThePlayer : MonoBehaviour {
             SetY();
         if (enable_Z)
             SetZ();
+        setOfset();
 	}
 
     private void SetX()
@@ -42,5 +42,10 @@ public class FollowThePlayer : MonoBehaviour {
     private void SetZ()
     {
         ts.position = new Vector3(ts.position.x, ts.position.y, ts_pl.position.z);
+    }
+
+    private void setOfset()
+    {
+        ts.position += new Vector3(ofset_X, ofset_Y, ofset_Z);
     }
 }

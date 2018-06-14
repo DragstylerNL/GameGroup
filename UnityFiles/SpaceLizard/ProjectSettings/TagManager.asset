@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Spawn_Powerup
+  - Spawn_Warning
+  - Spawn_Rocket
   layers:
   - Default
   - TransparentFX

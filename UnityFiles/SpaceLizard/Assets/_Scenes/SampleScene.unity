@@ -128,7 +128,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
       propertyPath: m_LocalPosition.y
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 255796802}
   m_Layer: 0
   m_Name: RocketSpawn_Warning
-  m_TagString: Untagged
+  m_TagString: Spawn_Warning
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -272,9 +272,9 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -297,14 +297,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d8238cc53530b64fbb7828c3d3bb591, type: 3}
+  m_Script: {fileID: 11500000, guid: 66d165c70b95b4b47b95bc78fc777ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 613050365}
-  damping: 0.2
-  lookAheadFactor: 3
-  lookAheadReturnSpeed: 0.5
-  lookAheadMoveThreshold: 0.1
+  enable_X: 1
+  enable_Y: 0
+  enable_Z: 0
+  ofset_X: 8
+  ofset_Y: 0
+  ofset_Z: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -397,6 +398,7 @@ MonoBehaviour:
   - {fileID: 21300006, guid: 24505830a80407641aea804dd918dc3a, type: 3}
   - {fileID: 21300004, guid: 24505830a80407641aea804dd918dc3a, type: 3}
   - {fileID: 21300000, guid: 24505830a80407641aea804dd918dc3a, type: 3}
+  popUp: {fileID: 0}
   pointsText: {fileID: 75509114}
 --- !u!82 &519420034
 AudioSource:
@@ -499,10 +501,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1525276007}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!4 &613050365 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
-  m_PrefabInternal: {fileID: 191456453}
 --- !u!1 &633234737 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 87a2357765801c34292d6718d8b4d770, type: 2}
@@ -527,48 +525,6 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1525276007}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!1001 &822754011
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -0.043182254
-      objectReference: {fileID: 0}
-    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -3.541081
-      objectReference: {fileID: 0}
-    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1022343899
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +570,9 @@ MonoBehaviour:
   enable_X: 0
   enable_Y: 1
   enable_Z: 0
+  ofset_X: 0
+  ofset_Y: 0
+  ofset_Z: 0
 --- !u!114 &1034725097 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114722054422613482, guid: 0d95a48785e76fd4a9934d7d23b3cb0e,
@@ -630,7 +589,7 @@ GameObject:
   - component: {fileID: 1143682692}
   m_Layer: 0
   m_Name: RocketSpawn_Rocket
-  m_TagString: Untagged
+  m_TagString: Spawn_Rocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -648,6 +607,48 @@ Transform:
   m_Father: {fileID: 1022343900}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1444167396
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.043182254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.541081
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444048040831554, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1493642602
 Prefab:
   m_ObjectHideFlags: 0
@@ -815,7 +816,7 @@ GameObject:
   - component: {fileID: 1604373283}
   m_Layer: 0
   m_Name: PowerUpSpawn
-  m_TagString: Untagged
+  m_TagString: Spawn_Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -878,3 +879,6 @@ MonoBehaviour:
   enable_X: 1
   enable_Y: 0
   enable_Z: 0
+  ofset_X: 4.5
+  ofset_Y: 0
+  ofset_Z: 0
