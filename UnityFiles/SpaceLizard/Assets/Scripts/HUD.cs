@@ -10,9 +10,9 @@ public class HUD : MonoBehaviour
     //timer
     private float timer = 0f;
     //position of the array with sprites or gameObjects
-    private int sIndex = 0, aIndex = 0;
+    public int sIndex = 0, aIndex = 0;
     //amount to display on score gameObject
-    private int points = 0;
+    private int points = 0, prevHealth;
 
     //dead controls the 
     public bool dead = false, start = true;
@@ -20,6 +20,7 @@ public class HUD : MonoBehaviour
     //public variables:
     //the speed the timer will remove air(health)
     public int timerSpeed = 60;
+    public int health = 20;
 
     //arrays that hold the images and gameObjects for the air(health) UI
     public Image[] airImages;
@@ -30,6 +31,9 @@ public class HUD : MonoBehaviour
 
     private void Update()
     {
+        
+        aIndex = (int)Mathf.Ceil((health - 1)/5);
+        Debug.Log(aIndex);
 
         //these are to clean up the Update function
         updateHealth();
@@ -37,11 +41,14 @@ public class HUD : MonoBehaviour
         if (dead)
             beDeadThot();
 
+       
     }
 
     //Update health will update the health UI + the right numbers
     private void updateHealth()
     {
+
+        prevHealth = health;
 
         //if the timer has started run this code
         if (start) {
@@ -50,30 +57,38 @@ public class HUD : MonoBehaviour
             //if timer is bigger then the timerSpeed and the player isn't dead sIndex++
             if (timer > timerSpeed && !dead) {
                 //sIndex (Sprite Index) puts the right image in the gameObject Image spots
-                sIndex++;
+                health--;
+                sIndex = health;
                 // reset timer to 0
                 timer -= timerSpeed;
             }
         }
 
-        //if sIndex is greater than the lenght of the Sprites array,
-        //so if there are no more sprite to be rendered after this because the health is empty
-        //then just reset the sIndex to be the full health sprite AND shift over to the next health bar
-        if (sIndex > sprites.Length - 1 && aIndex != airImages.Length - 1 && !dead) {
-            aIndex++;
-            sIndex = 0;
-        }
-
-        //aIndex is for the which health bar to be focused on
-
         //if the last bar has been reached AND sIndex is on its last sprite
         //player is dead
-        if (aIndex == airImages.Length - 1 && sIndex > sprites.Length - 2) {
+        if (aIndex == 0 && sIndex == 0) {
             dead = true;
         }
 
         //update the UI images to the correct sprites last
+        if (health != prevHealth)
+            updateHealthBar();
+
+    }
+
+    //Call this function to update the healthbar realtime instead on timer speed
+    private void updateHealthBar()
+    {
+        //set the sprite to the right sprites
         airImages[aIndex].sprite = sprites[sIndex];
+
+        //make sure they are empty if health is low enough
+        if (health <= 15)
+            airImages[airImages.Length - 1].sprite = sprites[0];
+        if (health <= 10)
+            airImages[airImages.Length - 2].sprite = sprites[0];
+        if (health <= 5)
+            airImages[airImages.Length - 3].sprite = sprites[0];
     }
 
     //updates the Score UI
@@ -95,16 +110,21 @@ public class HUD : MonoBehaviour
         start = false;
     }
 
-    //removes 1 air point
-    public void takeDamage()
+    //removes air(health) from player
+    public void takeDamage(int damage)
     {
-        if (!dead) {
-            if (sIndex > sprites.Length - 1) {
-                sIndex = 1;
-            } else if (sIndex >= 0) {
-                sIndex++;
-            }
+
+        //remove amount of damage from health
+        health -= damage;
+
+        //if health is lower than 0 after the damage player is dead
+        if(health <= 0) {
+            dead = true;
         }
+
+        //update the healthbar individual from the timer speed
+        //for instant change in the ui
+        updateHealthBar();
     }
 
     //adds the given amount of points
@@ -144,11 +164,12 @@ public class HUD : MonoBehaviour
 
     public void resetAir()
     {
-        aIndex = 0;
-        sIndex = 0;
-        timer = 0f;
+        //set health to max again
+        health = 20;
+
+        //set all the sprites back to the full one
         foreach(Image item in airImages) {
-            item.sprite = sprites[0];
+            item.sprite = sprites[4];
         }
     }
 }
