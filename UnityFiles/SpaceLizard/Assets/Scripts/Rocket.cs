@@ -23,6 +23,7 @@ public class Rocket : MonoBehaviour {
         { 
             hud = FindObjectOfType<HUD>();
 
+<<<<<<< HEAD
             //hud.Boom(this.transform);
             hud.takeDamage(1);
             Destroy(this.gameObject);
@@ -32,6 +33,10 @@ public class Rocket : MonoBehaviour {
 
             hud.takeDamage(0);
             Destroy(this.gameObject);
+=======
+            hud.takeDamage(2);
+            Destroy(this.gameObject);
+>>>>>>> e71f9c34595ce36956c1856c62e930f6765a202c
             
         }
     }
