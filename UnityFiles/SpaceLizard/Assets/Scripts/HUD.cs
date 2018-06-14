@@ -42,7 +42,6 @@ public class HUD : MonoBehaviour
     {
         
         aIndex = (int)Mathf.Ceil((health - 1)/5);
-        Debug.Log(aIndex);
 
         //these are to clean up the Update function
         updateHealth();
