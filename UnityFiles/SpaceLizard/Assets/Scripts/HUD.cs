@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class HUD : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class HUD : MonoBehaviour
     //dead controls the 
     public bool dead = false, start = true;
 
+    private Animator popUpAnim;
+
     //public variables:
     //the speed the timer will remove air(health)
     public int timerSpeed = 60;
@@ -25,9 +28,15 @@ public class HUD : MonoBehaviour
     //arrays that hold the images and gameObjects for the air(health) UI
     public Image[] airImages;
     public Sprite[] sprites;
+    public TextMeshProUGUI popUp;
 
     //link to the text for the score UI
     public Text pointsText;
+
+    private void Start()
+    {
+        popUpAnim = popUp.GetComponent<Animator>();
+    }
 
     private void Update()
     {
@@ -171,5 +180,26 @@ public class HUD : MonoBehaviour
         foreach(Image item in airImages) {
             item.sprite = sprites[4];
         }
+    }
+
+    public void testfunction(string text)
+    {
+        popUpText(text, 5.0f);
+    }
+
+    public void popUpText(string text, float durationTime)
+    {
+        StartCoroutine(DisplayText(text, durationTime));
+    }
+
+    IEnumerator DisplayText(string text, float durationTime)
+    {
+        popUpAnim.SetBool("DisplayText", true);
+
+        popUp.text = text;
+
+        yield return new WaitForSeconds(durationTime);
+
+        popUpAnim.SetBool("DisplayText", false);
     }
 }
