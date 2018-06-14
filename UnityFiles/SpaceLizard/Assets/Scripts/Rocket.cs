@@ -28,11 +28,16 @@ public class Rocket : MonoBehaviour {
             hud.takeDamage(1);
             Destroy(this.gameObject);
             
-=======
-            hud.takeDamage();
+            hud.takeDamage(3);
             Destroy(this.gameObject);
 
->>>>>>> aec05632bffdd0aeed43e54870d47d3052650c0b
+            hud.takeDamage(0);
+            Destroy(this.gameObject);
+=======
+            hud.takeDamage(2);
+            Destroy(this.gameObject);
+>>>>>>> e71f9c34595ce36956c1856c62e930f6765a202c
+            
         }
     }
 }
