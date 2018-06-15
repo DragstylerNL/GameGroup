@@ -15,7 +15,8 @@ public class SpawnManager : MonoBehaviour {
 	
     public void SpawnPowerup(GameObject spawnMe)
     {
-        Instantiate(spawnMe, sp_pwr);
+        GameObject powerup = Instantiate(spawnMe, sp_pwr);
+        powerup.transform.parent = null;
     }
 
     public void SpawnRocket(GameObject Warning, GameObject Rocket)
