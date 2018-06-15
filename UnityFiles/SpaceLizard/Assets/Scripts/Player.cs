@@ -26,13 +26,13 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.name == "RocketBoot") {
+        if(other.name == "RocketBoot" || other.name == "RocketBoot(Clone)") {
             Destroy(other.gameObject);
             Debug.Log("werkt het???");
             StartCoroutine(Boot(other));
         }
 
-        if (other.name == "Zuurstof")
+        if (other.name == "Zuurstof" || other.name == "Zuurstof(Clone)")
         {
             Destroy(other.gameObject);
             Debug.Log("zuurstof werkt");
