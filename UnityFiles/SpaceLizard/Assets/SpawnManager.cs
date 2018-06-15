@@ -8,9 +8,9 @@ public class SpawnManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        sp_pwr = GameObject.FindGameObjectWithTag("SpawnPowerup").GetComponent<Transform>();
-        sp_wrn = GameObject.FindGameObjectWithTag("SpawnWarning").GetComponent<Transform>();
-        sp_rck = GameObject.FindGameObjectWithTag("SpawnRocket").GetComponent<Transform>();
+        sp_pwr = GameObject.FindGameObjectWithTag("Spawn_Powerup").GetComponent<Transform>();
+        sp_wrn = GameObject.FindGameObjectWithTag("Spawn_Warning").GetComponent<Transform>();
+        sp_rck = GameObject.FindGameObjectWithTag("Spawn_Rocket").GetComponent<Transform>();
     }
 	
     public void SpawnPowerup(GameObject spawnMe)

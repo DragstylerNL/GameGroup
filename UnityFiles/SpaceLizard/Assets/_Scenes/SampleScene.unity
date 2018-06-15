@@ -646,6 +646,66 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1562384397288224, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416844587650674, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322360263363124, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533796984292820, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152584514802494, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1403276506832686, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820564930488942, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644544597049244, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100494066278908, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1773309027887932, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103772404800404, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693987140261300, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1563169766416706, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1644527755810786, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1967654327462628, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
+      propertyPath: m_TagString
+      value: GroundLayer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59aa1d1995ca21f4a81364de3c7ad24e, type: 2}
   m_IsPrefabParent: 0
@@ -843,6 +903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1634744247}
   - component: {fileID: 1634744248}
+  - component: {fileID: 1634744249}
   m_Layer: 0
   m_Name: ObjectSpawnerManager
   m_TagString: Untagged
@@ -882,3 +943,14 @@ MonoBehaviour:
   ofset_X: 4.5
   ofset_Y: 0
   ofset_Z: 0
+--- !u!114 &1634744249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1634744246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89020d656bfd95b49898d164bc1c9704, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
