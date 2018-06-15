@@ -14,7 +14,7 @@ public class Rocket : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        ts.position += Vector3.right * Time.deltaTime * -20 ;
+        ts.position += Vector3.right * Time.deltaTime * -5 ;
 	}
 
     void OnTriggerEnter2D(Collider2D other)
@@ -23,16 +23,7 @@ public class Rocket : MonoBehaviour {
         { 
             hud = FindObjectOfType<HUD>();
 
-            hud.takeDamage(1);
-            Destroy(this.gameObject);
-            
             hud.takeDamage(3);
-            Destroy(this.gameObject);
-
-            hud.takeDamage(0);
-            Destroy(this.gameObject);
-
-            hud.takeDamage(2);
             Destroy(this.gameObject);
             
         }
