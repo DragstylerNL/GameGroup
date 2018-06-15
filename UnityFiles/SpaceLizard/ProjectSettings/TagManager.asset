@@ -8,6 +8,7 @@ TagManager:
   - Spawn_Powerup
   - Spawn_Warning
   - Spawn_Rocket
+  - GroundLayer
   layers:
   - Default
   - TransparentFX
