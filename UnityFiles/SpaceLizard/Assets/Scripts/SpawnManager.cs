@@ -22,7 +22,8 @@ public class SpawnManager : MonoBehaviour {
     public void SpawnRocket(GameObject Warning, GameObject Rocket)
     {
         Instantiate(Warning, sp_wrn);
-        Instantiate(Rocket, sp_rck);
+        GameObject rocket = Instantiate(Rocket, sp_rck);
+        rocket.transform.parent = null;
     }
 
 }
