@@ -5,9 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public bool RocketInvincible = false;
-    public float effectDuration = 4f;
+    public float effectDuration = 6f;
 
-    public Animator anim;
+    public Animator[] anim;
 
     UnityStandardAssets._2D.PlatformerCharacter2D platformerCharacter2D;
     public GameObject camera;
@@ -54,13 +54,23 @@ public class Player : MonoBehaviour {
         //yield return new WaitForSeconds(0.0f);
 
         platformerCharacter2D.SetMaxSpeed(20f);
-        anim.speed = 2;
+        foreach(Animator anims in anim)
+        {
+            anims.speed = 2;
+        }
+        camera.GetComponent<FollowThePlayer>().ofset_X += 2;
 
         yield return new WaitForSeconds(effectDuration);
 
         platformerCharacter2D.SetMaxSpeed(10f);
-        anim.speed = 1;
+        foreach (Animator anims in anim)
+        {
+            anims.speed = 1;
+        }
+        camera.GetComponent<FollowThePlayer>().ofset_X -= 2;
+
     }
+
 
     //IEnumerator Peper(Collider2D other)
     //{
