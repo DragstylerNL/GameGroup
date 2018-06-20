@@ -40,3 +40,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+*.psd
+*.meta
+*.asset
+UnityFiles/TheGameProject/Temp/UnityLockfile

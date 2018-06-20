@@ -14,7 +14,7 @@ public class Rocket : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        ts.position += Vector3.right * Time.deltaTime * -20 ;
+        ts.position += Vector3.right * Time.deltaTime * -5 ;
 	}
 
     void OnTriggerEnter2D(Collider2D other)
@@ -22,26 +22,10 @@ public class Rocket : MonoBehaviour {
         if(other.gameObject.tag == "Player")
         { 
             hud = FindObjectOfType<HUD>();
-<<<<<<< HEAD
-            
-=======
 
-
->>>>>>> 94a2639636b3a1a71265e0cce9cc5b94fd77aa30
-            //hud.Boom(this.transform);
-            hud.takeDamage(1);
-            Destroy(this.gameObject);
-            
-<<<<<<< HEAD
             hud.takeDamage(3);
             Destroy(this.gameObject);
             
-=======
-
-            hud.takeDamage(0);
-            Destroy(this.gameObject);
-
->>>>>>> 94a2639636b3a1a71265e0cce9cc5b94fd77aa30
         }
     }
 }

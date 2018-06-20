@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour {
 
     public bool RocketInvincible = false;
-    public float effectDuration = 2f;
+    public float effectDuration = 6f;
+
+    public Animator[] anim;
 
     UnityStandardAssets._2D.PlatformerCharacter2D platformerCharacter2D;
     public GameObject camera;
@@ -24,13 +26,13 @@ public class Player : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.name == "RocketBoot") {
+        if(other.name == "RocketBoot" || other.name == "RocketBoot(Clone)") {
             Destroy(other.gameObject);
             Debug.Log("werkt het???");
             StartCoroutine(Boot(other));
         }
 
-        if (other.name == "Zuurstof")
+        if (other.name == "Zuurstof" || other.name == "Zuurstof(Clone)")
         {
             Destroy(other.gameObject);
             Debug.Log("zuurstof werkt");
@@ -52,11 +54,23 @@ public class Player : MonoBehaviour {
         //yield return new WaitForSeconds(0.0f);
 
         platformerCharacter2D.SetMaxSpeed(20f);
+        foreach(Animator anims in anim)
+        {
+            anims.speed = 2;
+        }
+        camera.GetComponent<FollowThePlayer>().ofset_X += 2;
 
         yield return new WaitForSeconds(effectDuration);
 
         platformerCharacter2D.SetMaxSpeed(10f);
+        foreach (Animator anims in anim)
+        {
+            anims.speed = 1;
+        }
+        camera.GetComponent<FollowThePlayer>().ofset_X -= 2;
+
     }
+
 
     //IEnumerator Peper(Collider2D other)
     //{
