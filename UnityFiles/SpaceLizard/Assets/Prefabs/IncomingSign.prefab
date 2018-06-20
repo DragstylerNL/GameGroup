@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 95369713724526984}
   - component: {fileID: 212313733958237912}
   - component: {fileID: 114021852754207904}
+  - component: {fileID: 114047072188994130}
   m_Layer: 0
   m_Name: IncomingSign
   m_TagString: Untagged
@@ -71,6 +72,23 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114047072188994130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922542819677254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d165c70b95b4b47b95bc78fc777ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enable_X: 1
+  enable_Y: 0
+  enable_Z: 0
+  ofset_X: 18
+  ofset_Y: 0
+  ofset_Z: 0
 --- !u!212 &212313733958237912
 SpriteRenderer:
   m_ObjectHideFlags: 1

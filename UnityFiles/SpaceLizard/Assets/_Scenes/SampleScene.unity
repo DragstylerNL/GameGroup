@@ -648,6 +648,7 @@ MonoBehaviour:
   warning: {fileID: 1922542819677254, guid: fe330e10b3e64da4b83c81f1df493f86, type: 2}
   rocket: {fileID: 1172745458586166, guid: 9e913ce85709f474db3ca0afd226a70c, type: 2}
   timer: 0
+  TimeToMustHavePast: 20
   speed: 10
 --- !u!114 &1034725097 stripped
 MonoBehaviour:
@@ -793,7 +794,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1143682691}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25, y: 0, z: 0}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1022343900}
