@@ -21,7 +21,10 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(Input.GetKeyDown("space")) {
+            //StartCoroutine(Jump());
+            platformerCharacter2D.m_Anim.SetBool("Jump", true);
+        }
 	}
 
     void OnTriggerEnter2D(Collider2D other)
@@ -46,6 +49,15 @@ public class Player : MonoBehaviour {
         //    StartCoroutine(Peper(other));
         //}
     }
+
+    /*IEnumerator Jump()
+    {
+        platformerCharacter2D.m_Anim.SetBool("Jump", true);
+
+        yield return new WaitForSeconds(2.0f);
+
+        platformerCharacter2D.m_Anim.SetBool("Jump", false);
+    }*/
 
     IEnumerator Boot(Collider2D other)
     {
