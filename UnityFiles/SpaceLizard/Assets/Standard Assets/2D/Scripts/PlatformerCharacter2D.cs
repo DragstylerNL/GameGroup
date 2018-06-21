@@ -19,7 +19,6 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;            // Reference to the player's animator component.
         public Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-        private int i = 0;
 
 
         private void Awake()
@@ -45,16 +44,6 @@ namespace UnityStandardAssets._2D
                     m_Grounded = true;
             }
             m_Anim.SetBool("Ground", m_Grounded);
-            i++;
-            if (m_Grounded && i>2)
-            {
-                m_Anim.SetBool("HasGround", m_Grounded);
-            }
-            else if (!m_Grounded)
-            {
-                m_Anim.SetBool("HasGround", m_Grounded);
-                i = 0;
-            }
 
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
