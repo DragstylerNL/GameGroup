@@ -43,6 +43,8 @@ public class HUD : MonoBehaviour
         
         aIndex = (int)Mathf.Ceil((health - 1)/5);
 
+        points += 1;
+
         //these are to clean up the Update function
         updateHealth();
         updateScore();
@@ -101,7 +103,7 @@ public class HUD : MonoBehaviour
 
     //updates the Score UI
     private void updateScore()
-    {
+    {   
         //update the text to points integer
         pointsText.text = points.ToString();
     }

@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
     public float effectDuration = 6f;
 
     public Animator[] anim;
+    private Animator p_anim;
 
     UnityStandardAssets._2D.PlatformerCharacter2D platformerCharacter2D;
     public GameObject camera;
@@ -17,6 +18,8 @@ public class Player : MonoBehaviour {
 	void Start () {
         platformerCharacter2D = this.GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
         hud = camera.GetComponent<HUD>();
+
+        p_anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -59,6 +62,7 @@ public class Player : MonoBehaviour {
             anims.speed = 2;
         }
         camera.GetComponent<FollowThePlayer>().ofset_X += 2;
+        p_anim.SetBool("Pickup", true);
 
         yield return new WaitForSeconds(effectDuration);
 
@@ -69,6 +73,7 @@ public class Player : MonoBehaviour {
         }
         camera.GetComponent<FollowThePlayer>().ofset_X -= 2;
 
+        p_anim.SetBool("Pickup", false);
     }
 
 
