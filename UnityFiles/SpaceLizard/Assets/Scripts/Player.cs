@@ -63,6 +63,7 @@ public class Player : MonoBehaviour {
         }
         camera.GetComponent<FollowThePlayer>().ofset_X += 2;
         p_anim.SetBool("Pickup", true);
+        p_anim.SetBool("hasRocketBoots", true);
 
         yield return new WaitForSeconds(effectDuration);
 
@@ -74,6 +75,7 @@ public class Player : MonoBehaviour {
         camera.GetComponent<FollowThePlayer>().ofset_X -= 2;
 
         p_anim.SetBool("Pickup", false);
+        p_anim.SetBool("hasRocketBoots", false);
     }
 
 
