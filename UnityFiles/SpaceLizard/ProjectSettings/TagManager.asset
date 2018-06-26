@@ -9,6 +9,10 @@ TagManager:
   - Spawn_Warning
   - Spawn_Rocket
   - GroundLayer
+  - EnvironmentManager
+  - Env_Mo
+  - Env_La
+  - Env_Ea
   layers:
   - Default
   - TransparentFX
