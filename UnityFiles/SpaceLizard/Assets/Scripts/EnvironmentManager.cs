@@ -18,8 +18,7 @@ public class EnvironmentManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (ChangeNow) { SetNewEnvironment(); }
-        ChangeNow = false;
+        if (ChangeNow) { SetNewEnvironment(); ChangeNow = false; }
     }
 
     public void SetNewEnvironment()
