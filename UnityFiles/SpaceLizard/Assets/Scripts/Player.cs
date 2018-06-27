@@ -59,23 +59,23 @@ public class Player : MonoBehaviour {
         platformerCharacter2D.SetMaxSpeed(20f);
         foreach(Animator anims in anim)
         {
-            anims.speed = 2;
+            anims.speed = 1;
         }
         camera.GetComponent<FollowThePlayer>().ofset_X += 2;
         p_anim.SetBool("Pickup", true);
-        p_anim.SetBool("hasRocketBoots", true);
+        p_anim.SetFloat("Speed", 2);
 
         yield return new WaitForSeconds(effectDuration);
 
         platformerCharacter2D.SetMaxSpeed(10f);
         foreach (Animator anims in anim)
         {
-            anims.speed = 1;
+            anims.speed = 0.5f;
         }
         camera.GetComponent<FollowThePlayer>().ofset_X -= 2;
 
         p_anim.SetBool("Pickup", false);
-        p_anim.SetBool("hasRocketBoots", false);
+        p_anim.SetFloat("Speed", 1);
     }
 
 
