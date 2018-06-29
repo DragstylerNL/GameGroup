@@ -14,6 +14,7 @@ public class HUD : MonoBehaviour
     public int sIndex = 0, aIndex = 0;
     //amount to display on score gameObject
     private int points = 0, prevHealth;
+    public int multiplier = 1;
 
     //dead controls the 
     public bool dead = false, start = true;
@@ -43,7 +44,7 @@ public class HUD : MonoBehaviour
         
         aIndex = (int)Mathf.Ceil((health - 1)/5);
 
-        points += 1;
+        points += 1 * multiplier;
 
         //these are to clean up the Update function
         updateHealth();
