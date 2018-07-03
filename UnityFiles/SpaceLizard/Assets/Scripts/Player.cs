@@ -17,8 +17,13 @@ public class Player : MonoBehaviour {
     EnvironmentManager EnvMG;
     PowerUp spwMG;
 
-	// Use this for initialization
-	void Start () {
+    private GameObject environmentManager;
+    private EnvironmentManager envM;
+
+    // Use this for initialization
+    void Start () {
+        environmentManager = GameObject.FindGameObjectWithTag("EnvironmentManager");
+        envM = environmentManager.GetComponent<EnvironmentManager>();
         platformerCharacter2D = this.GetComponent<UnityStandardAssets._2D.PlatformerCharacter2D>();
         hud = camera.GetComponent<HUD>();
         EnvMG = GameObject.FindGameObjectWithTag("EnvironmentManager").GetComponent<EnvironmentManager>();
@@ -39,6 +44,12 @@ public class Player : MonoBehaviour {
             StartCoroutine(Boot(other));
         }
 
+        if(other.name == "Blackhole" || other.name == "Blackhole(Clone)") {
+            Destroy(other.gameObject);
+            Debug.Log("Blackhole touched!");
+            StartCoroutine(Blackhole());
+        }
+
         if (other.name == "Zuurstof" || other.name == "Zuurstof(Clone)")
         {
             Destroy(other.gameObject);
@@ -52,6 +63,16 @@ public class Player : MonoBehaviour {
         //    Debug.Log("Peper werkt");
         //    StartCoroutine(Peper(other));
         //}
+    }
+
+    IEnumerator Blackhole()
+    {
+
+        hud.fadeOut();
+
+        yield return new WaitForSeconds(0.2f);
+
+        envM.SetNewEnvironment();
     }
 
     IEnumerator Boot(Collider2D other)
