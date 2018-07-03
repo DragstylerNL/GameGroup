@@ -62,10 +62,6 @@ public class HUD : MonoBehaviour
         if (dead)
             beDeadThot();
 
-        if (points > 500 && points < 505) {
-            SpawnBlackhole();
-        }
-
         if (fade) {
             alpha += 0.1f;
             fadeOutImage.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, alpha);

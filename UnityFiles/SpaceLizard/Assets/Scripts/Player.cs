@@ -20,6 +20,8 @@ public class Player : MonoBehaviour {
     private GameObject environmentManager;
     private EnvironmentManager envM;
 
+    public float timer = 0f;
+
     // Use this for initialization
     void Start () {
         environmentManager = GameObject.FindGameObjectWithTag("EnvironmentManager");
@@ -33,7 +35,11 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        timer += 1f * Time.deltaTime;
+        if(timer > 10f) {
+            hud.SpawnBlackhole();
+            timer = 0f;
+        }
 	}
 
     void OnTriggerEnter2D(Collider2D other)
