@@ -8,8 +8,9 @@ using TMPro;
 public class HUD : MonoBehaviour
 {
     //private variables:
+    private bool fade = false;
     //timer
-    private float timer = 0f;
+    private float timer = 0f, alpha = 0f;
     //position of the array with sprites or gameObjects
     public int sIndex = 0, aIndex = 0;
     //amount to display on score gameObject
@@ -33,10 +34,19 @@ public class HUD : MonoBehaviour
 
     //link to the text for the score UI
     public Text pointsText;
+    
+    private GameObject environmentManager;
+    private EnvironmentManager envM;
+
+    public GameObject blackhole;
+
+    public RawImage fadeOutImage;
 
     private void Start()
     {
+        environmentManager = GameObject.FindGameObjectWithTag("EnvironmentManager");
         popUpAnim = popUp.GetComponent<Animator>();
+        envM = environmentManager.GetComponent<EnvironmentManager>();
     }
 
     private void Update()
@@ -52,6 +62,22 @@ public class HUD : MonoBehaviour
         if (dead)
             beDeadThot();
 
+        if (points > 500 && points < 505) {
+            SpawnBlackhole();
+        }
+
+        if (fade) {
+            alpha += 0.1f;
+            fadeOutImage.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, alpha);
+            if (alpha > 2f) { 
+                fade = false;
+            }
+        }
+        
+        if(!fade && alpha > 0) {
+            alpha -= 0.1f;
+            fadeOutImage.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, alpha);
+        }
        
     }
 
@@ -203,5 +229,24 @@ public class HUD : MonoBehaviour
         yield return new WaitForSeconds(durationTime);
 
         popUpAnim.SetBool("DisplayText", false);
+    }
+
+    public void fadeOut()
+    {
+        fade = true;
+    }
+
+    public void SpawnBlackhole()
+    {
+        Debug.Log("Spawning blackhole!");
+
+        GameObject blackholeInst = Instantiate(blackhole, this.transform);
+
+        Vector3 parentPos = this.transform.position;
+
+        blackholeInst.transform.parent = null;
+        blackholeInst.transform.position = new Vector3(parentPos.x + 20, parentPos.y - 3, 0);
+
+        points += 20;
     }
 }
