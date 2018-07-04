@@ -79,6 +79,9 @@ public class Player : MonoBehaviour {
         yield return new WaitForSeconds(0.2f);
 
         envM.SetNewEnvironment();
+        envM.GetEnvironment();
+
+        hud.popUpText("You've just entered a blackhole that has taken you to " + envM.GetEnvironment() + "!", 3f);
     }
 
     IEnumerator Boot(Collider2D other)

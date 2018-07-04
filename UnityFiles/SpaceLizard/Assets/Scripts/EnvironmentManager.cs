@@ -49,4 +49,15 @@ public class EnvironmentManager : MonoBehaviour {
                 break;
         }
     }
+
+    public string GetEnvironment()
+    {
+        switch (CurrentEnvironment) {
+            case 0: return "The Moon";
+            case 1: return "a Lava planet";
+            case 2: return "a Earth planet";
+        }
+
+        return null;
+    }
 }
