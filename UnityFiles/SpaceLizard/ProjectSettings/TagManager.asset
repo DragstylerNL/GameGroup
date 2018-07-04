@@ -13,6 +13,8 @@ TagManager:
   - Env_Mo
   - Env_La
   - Env_Ea
+  - Rocket
+  - IncomingSign
   layers:
   - Default
   - TransparentFX

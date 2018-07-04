@@ -76,6 +76,12 @@ public class Player : MonoBehaviour {
 
         hud.fadeOut();
 
+        GameObject[] rockets = GameObject.FindGameObjectsWithTag("Rocket");
+        
+        foreach (GameObject rocket in rockets) {
+            rocket.GetComponent<Rocket>().DeSpawn();
+        }
+        
         yield return new WaitForSeconds(0.2f);
 
         envM.SetNewEnvironment();
@@ -100,6 +106,7 @@ public class Player : MonoBehaviour {
         anim[5].speed = 2f;
         anim[6].speed = 2f;
         anim[7].speed = 2f;
+
         hud.multiplier = 2;
         spwMG.speed = 12;
 

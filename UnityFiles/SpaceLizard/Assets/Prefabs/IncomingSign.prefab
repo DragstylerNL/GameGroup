@@ -21,11 +21,11 @@ GameObject:
   - component: {fileID: 4251843850506988}
   - component: {fileID: 95369713724526984}
   - component: {fileID: 212313733958237912}
-  - component: {fileID: 114021852754207904}
   - component: {fileID: 114047072188994130}
+  - component: {fileID: 114260740185065746}
   m_Layer: 0
   m_Name: IncomingSign
-  m_TagString: Untagged
+  m_TagString: IncomingSign
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,17 +61,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114021852754207904
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1922542819677254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114047072188994130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,6 +78,18 @@ MonoBehaviour:
   ofset_X: 18
   ofset_Y: 0
   ofset_Z: 0
+--- !u!114 &114260740185065746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1922542819677254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37539fdb06c1a26489aa07485367972f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 3
 --- !u!212 &212313733958237912
 SpriteRenderer:
   m_ObjectHideFlags: 1

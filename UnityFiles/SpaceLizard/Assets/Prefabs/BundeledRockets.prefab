@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61944976297370382}
   m_Layer: 0
   m_Name: BundeledRockets
-  m_TagString: Untagged
+  m_TagString: Rocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe365bf28da5f45468f5154befacff8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifeTime: 5
 --- !u!114 &114303061103164064
 MonoBehaviour:
   m_ObjectHideFlags: 1

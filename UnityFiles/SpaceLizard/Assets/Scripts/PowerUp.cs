@@ -7,7 +7,7 @@ public class PowerUp : MonoBehaviour {
     public GameObject[] pws;
     private SpawnManager sm;
 
-    public float timer = 0;
+    public float timer = 0f;
     public int timerSpeed = 60, speed = 5;
     private int maxRange, minRange = 0;
 
@@ -20,9 +20,9 @@ public class PowerUp : MonoBehaviour {
     private void Update()
     {
         timer += Time.deltaTime * speed;
-        if(timer > 60) {
+        if(timer > 40f) {
             sm.SpawnPowerup(pws[Random.Range(minRange, maxRange)]);
-            timer = 0;
+            timer = 0f;
         }
     }
 }
