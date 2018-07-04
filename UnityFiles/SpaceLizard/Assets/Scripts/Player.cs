@@ -21,6 +21,8 @@ public class Player : MonoBehaviour {
     private EnvironmentManager envM;
 
     public float timer = 0f;
+    private float cmTimer = 0;
+    private bool cmBool = false;
 
     // Use this for initialization
     void Start () {
@@ -40,7 +42,19 @@ public class Player : MonoBehaviour {
             hud.SpawnBlackhole();
             timer = 0f;
         }
-	}
+
+        if (cmTimer > 0 && !cmBool)
+        {
+            cmTimer -= 0.05f;
+            camera.GetComponent<FollowThePlayer>().ofset_X += 0.1f;
+        }
+        if (cmTimer > 0 && cmBool)
+        {
+            cmTimer -= 0.05f;
+            camera.GetComponent<FollowThePlayer>().ofset_X -= 0.1f;
+        }
+    }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -109,10 +123,12 @@ public class Player : MonoBehaviour {
 
         hud.multiplier = 2;
         spwMG.speed = 12;
-
-        camera.GetComponent<FollowThePlayer>().ofset_X += 2;
+        
         p_anim.SetBool("Pickup", true);
         p_anim.SetFloat("Speed", 2);
+
+        cmTimer = 1;
+        cmBool = false;
 
         yield return new WaitForSeconds(effectDuration);
 
@@ -129,10 +145,11 @@ public class Player : MonoBehaviour {
         hud.multiplier = 1;
         spwMG.speed = 5;
 
-        camera.GetComponent<FollowThePlayer>().ofset_X -= 2;
-
         p_anim.SetBool("Pickup", false);
         p_anim.SetFloat("Speed", 1);
+
+        cmTimer = 1;
+        cmBool = true;
     }
 
 
