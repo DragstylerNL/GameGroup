@@ -333,7 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe365bf28da5f45468f5154befacff8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionParticle: {fileID: 1252781532766464, guid: 070ea54050db8744889bd06ecd5208d2,
+  explosionParticle: {fileID: 1252781532766464, guid: 24b272b4812b047479bd95125926faf3,
     type: 2}
   lifeTime: 5
 --- !u!114 &114303061103164064
