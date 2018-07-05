@@ -7,6 +7,8 @@ public class Rocket : MonoBehaviour {
     private Transform ts;
     private HUD hud;
 
+    public GameObject explosionParticle;
+
     public float lifeTime = 5f;
 
 	// Use this for initialization
@@ -30,6 +32,11 @@ public class Rocket : MonoBehaviour {
             hud = FindObjectOfType<HUD>();
 
             hud.takeDamage(3);
+
+            GameObject expInst = Instantiate(explosionParticle, this.transform);
+            expInst.transform.parent = null;
+            expInst.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+
             DeSpawn();
             
         }

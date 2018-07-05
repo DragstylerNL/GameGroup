@@ -241,7 +241,7 @@ public class HUD : MonoBehaviour
         Vector3 parentPos = this.transform.position;
 
         blackholeInst.transform.parent = null;
-        blackholeInst.transform.position = new Vector3(parentPos.x + 20, parentPos.y - 3, 0);
+        blackholeInst.transform.position = new Vector3(parentPos.x + 20, parentPos.y - 2, 0);
 
         points += 20;
     }
