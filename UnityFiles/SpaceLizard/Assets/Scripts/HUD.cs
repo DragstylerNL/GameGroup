@@ -242,6 +242,8 @@ public class HUD : MonoBehaviour
         yield return new WaitForSeconds(durationTime);
 
         popUpAnim.SetBool("DisplayText", false);
+
+        popUp.text = "...";
     }
 
     public void fadeOut()
