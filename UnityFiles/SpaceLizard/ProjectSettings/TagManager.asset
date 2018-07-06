@@ -16,6 +16,7 @@ TagManager:
   - Rocket
   - IncomingSign
   - Game
+  - Gif
   layers:
   - Default
   - TransparentFX
