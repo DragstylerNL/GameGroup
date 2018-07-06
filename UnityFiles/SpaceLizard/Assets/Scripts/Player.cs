@@ -112,9 +112,9 @@ public class Player : MonoBehaviour {
 
         platformerCharacter2D.SetMaxSpeed(20f);
         
-        anim[0].speed = 1f;
-        anim[1].speed = 1f;
-        anim[2].speed = 1f;
+        anim[0].speed = 2f;
+        anim[1].speed = 2f;
+        anim[2].speed = 2f;
         anim[3].speed = 2f;
         anim[4].speed = 2f;
         anim[5].speed = 2f;
@@ -137,9 +137,9 @@ public class Player : MonoBehaviour {
 
         platformerCharacter2D.SetMaxSpeed(10f);
 
-        anim[0].speed = 0.5f;
-        anim[1].speed = 0.5f;
-        anim[2].speed = 0.5f;
+        anim[0].speed = 1f;
+        anim[1].speed = 1f;
+        anim[2].speed = 1f;
         anim[3].speed = 1f;
         anim[4].speed = 1f;
         anim[5].speed = 1f;

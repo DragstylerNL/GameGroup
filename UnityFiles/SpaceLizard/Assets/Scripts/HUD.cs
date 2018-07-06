@@ -114,7 +114,7 @@ public class HUD : MonoBehaviour
                 else if (deadTimer < 2) { if ( !popUpAnim.GetBool("DisplayText")){ popUpText("1.......", 2); } }
                 if (deadTimer < 0) {
                     dead = true;
-                    if (points > PlayerPrefs.GetInt("Maxscore")) { PlayerPrefs.SetInt("MaxScore", points); }
+                    if (points > PlayerPrefs.GetInt("Maxscore",0)) { PlayerPrefs.SetInt("MaxScore", points); }
                     PlayerPrefs.SetInt("LastScore", points);
                 }
             }

@@ -888,12 +888,47 @@ Prefab:
     - target: {fileID: 114667170349751746, guid: 3c9662051be1b5d4ea0ee5eb4bf734e3,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114667170349751746, guid: 3c9662051be1b5d4ea0ee5eb4bf734e3,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114667170349751746, guid: 3c9662051be1b5d4ea0ee5eb4bf734e3,
+        type: 2}
+      propertyPath: m_margin.w
+      value: -220.52686
+      objectReference: {fileID: 0}
+    - target: {fileID: 114667170349751746, guid: 3c9662051be1b5d4ea0ee5eb4bf734e3,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 114667170349751746, guid: 3c9662051be1b5d4ea0ee5eb4bf734e3,
+        type: 2}
+      propertyPath: m_fontSizeBase
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 114667170349751746, guid: 3c9662051be1b5d4ea0ee5eb4bf734e3,
+        type: 2}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114667170349751746, guid: 3c9662051be1b5d4ea0ee5eb4bf734e3,
+        type: 2}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114667170349751746, guid: 3c9662051be1b5d4ea0ee5eb4bf734e3,
+        type: 2}
+      propertyPath: m_margin.x
+      value: -154.698
+      objectReference: {fileID: 0}
+    - target: {fileID: 114667170349751746, guid: 3c9662051be1b5d4ea0ee5eb4bf734e3,
+        type: 2}
+      propertyPath: m_margin.y
+      value: -13.1657715
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c9662051be1b5d4ea0ee5eb4bf734e3, type: 2}
