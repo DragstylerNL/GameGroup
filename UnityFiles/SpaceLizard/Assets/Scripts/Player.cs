@@ -122,7 +122,7 @@ public class Player : MonoBehaviour {
         anim[7].speed = 2f;
 
         hud.multiplier = 2;
-        spwMG.speed = 12;
+        spwMG.speed = 10;
         
         p_anim.SetFloat("Speed", 2);
 
@@ -151,7 +151,8 @@ public class Player : MonoBehaviour {
         p_anim.SetBool("Pickup", false);
         p_anim.SetFloat("Speed", 1);
 
-        if (!p_anim.GetBool("Pickup")) {
+        if (!p_anim.GetBool("Pickup"))
+        {
             cmTimer = 1;
             cmBool = true;
         }

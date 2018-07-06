@@ -15,6 +15,7 @@ TagManager:
   - Env_Ea
   - Rocket
   - IncomingSign
+  - Game
   layers:
   - Default
   - TransparentFX
