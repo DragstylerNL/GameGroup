@@ -112,7 +112,11 @@ public class HUD : MonoBehaviour
                 if (deadTimer < 4 && deadTimer > 3f) { if (!popUpAnim.GetBool("DisplayText")) { popUpText("3....", 1); } }
                 else if (deadTimer < 3f && deadTimer > 2) { if ( !popUpAnim.GetBool("DisplayText")) { popUpText("2....", 1); } }
                 else if (deadTimer < 2) { if ( !popUpAnim.GetBool("DisplayText")){ popUpText("1.......", 2); } }
-                if (deadTimer < 0) { dead = true; }
+                if (deadTimer < 0) {
+                    dead = true;
+                    if (points > PlayerPrefs.GetInt("Maxscore")) { PlayerPrefs.SetInt("MaxScore", points); }
+                    PlayerPrefs.SetInt("LastScore", points);
+                }
             }
         }
 
@@ -256,6 +260,6 @@ public class HUD : MonoBehaviour
         blackholeInst.transform.parent = null;
         blackholeInst.transform.position = new Vector3(parentPos.x + 20, parentPos.y - 2, 0);
 
-        points += 20;
+        points += 5000;
     }
 }
