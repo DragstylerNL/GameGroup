@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
 
     UnityStandardAssets._2D.PlatformerCharacter2D platformerCharacter2D;
     public GameObject camera;
-    HUD hud;
+    HUD hud;    
 
     EnvironmentManager EnvMG;
     PowerUp spwMG;
