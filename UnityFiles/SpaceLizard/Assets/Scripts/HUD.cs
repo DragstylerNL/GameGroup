@@ -8,9 +8,9 @@ using TMPro;
 public class HUD : MonoBehaviour
 {
     //private variables:
-    private bool fade = false;
+    private bool fade = false, deadTimerHasStarted = false;
     //timer
-    private float timer = 0f, alpha = 0f;
+    private float timer = 0f, alpha = 0f, deadTimer = 0f;
     //position of the array with sprites or gameObjects
     public int sIndex = 0, aIndex = 0;
     //amount to display on score gameObject
@@ -84,7 +84,7 @@ public class HUD : MonoBehaviour
         prevHealth = health;
 
         //if the timer has started run this code
-        if (start) {
+        if (start && !deadTimerHasStarted) {
             //add to timer contantly
             timer += Time.deltaTime * 60;
             //if timer is bigger then the timerSpeed and the player isn't dead sIndex++
@@ -99,8 +99,25 @@ public class HUD : MonoBehaviour
 
         //if the last bar has been reached AND sIndex is on its last sprite
         //player is dead
-        if (aIndex == 0 && sIndex == 0) {
-            dead = true;
+        if (aIndex == 0 && sIndex == 0 && !deadTimerHasStarted) {
+            deadTimerHasStarted = true;
+        }
+        else if (aIndex != 0 || sIndex != 0) { deadTimerHasStarted = false; deadTimer = 4f; dead = false; }
+
+        if (deadTimerHasStarted)
+        {
+            if(deadTimer > 0)
+            {
+                deadTimer -= Time.deltaTime;
+                if (deadTimer < 4 && deadTimer > 3f) { if (!popUpAnim.GetBool("DisplayText")) { popUpText("3....", 1); } }
+                else if (deadTimer < 3f && deadTimer > 2) { if ( !popUpAnim.GetBool("DisplayText")) { popUpText("2....", 1); } }
+                else if (deadTimer < 2) { if ( !popUpAnim.GetBool("DisplayText")){ popUpText("1.......", 2); } }
+                if (deadTimer < 0) {
+                    dead = true;
+                    PlayerPrefs.SetInt("LastScore", points);
+                    if (points > PlayerPrefs.GetInt("Maxscore",0)) { PlayerPrefs.SetInt("MaxScore", points); }
+                }
+            }
         }
 
         //update the UI images to the correct sprites last
@@ -213,7 +230,7 @@ public class HUD : MonoBehaviour
 
     public void popUpText(string text, float durationTime)
     {
-        StartCoroutine(DisplayText(text, durationTime));
+        if ( !popUpAnim.GetBool("DisplayText")){ StartCoroutine(DisplayText(text, durationTime));}
     }
 
     IEnumerator DisplayText(string text, float durationTime)
@@ -225,6 +242,8 @@ public class HUD : MonoBehaviour
         yield return new WaitForSeconds(durationTime);
 
         popUpAnim.SetBool("DisplayText", false);
+
+        popUp.text = "...";
     }
 
     public void fadeOut()
@@ -243,6 +262,6 @@ public class HUD : MonoBehaviour
         blackholeInst.transform.parent = null;
         blackholeInst.transform.position = new Vector3(parentPos.x + 20, parentPos.y - 2, 0);
 
-        points += 20;
+        points += 1000;
     }
 }

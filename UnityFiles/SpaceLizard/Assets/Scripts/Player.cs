@@ -12,7 +12,7 @@ public class Player : MonoBehaviour {
 
     UnityStandardAssets._2D.PlatformerCharacter2D platformerCharacter2D;
     public GameObject camera;
-    HUD hud;
+    HUD hud;    
 
     EnvironmentManager EnvMG;
     PowerUp spwMG;
@@ -87,7 +87,6 @@ public class Player : MonoBehaviour {
 
     IEnumerator Blackhole()
     {
-
         hud.fadeOut();
 
         GameObject[] rockets = GameObject.FindGameObjectsWithTag("Rocket");
@@ -104,17 +103,21 @@ public class Player : MonoBehaviour {
         hud.popUpText("You've just entered a blackhole that has taken you to " + envM.GetEnvironment() + "!", 3f);
     }
 
+    private int powerups = 0;
+
     IEnumerator Boot(Collider2D other)
     {
         //Instantiate(pickupEffect, transform.position, transform.rotation);
 
         //yield return new WaitForSeconds(0.0f);
 
+        powerups++;
+
         platformerCharacter2D.SetMaxSpeed(20f);
         
-        anim[0].speed = 1f;
-        anim[1].speed = 1f;
-        anim[2].speed = 1f;
+        anim[0].speed = 2f;
+        anim[1].speed = 2f;
+        anim[2].speed = 2f;
         anim[3].speed = 2f;
         anim[4].speed = 2f;
         anim[5].speed = 2f;
@@ -122,11 +125,11 @@ public class Player : MonoBehaviour {
         anim[7].speed = 2f;
 
         hud.multiplier = 2;
-        spwMG.speed = 12;
+        spwMG.speed = 10;
         
         p_anim.SetFloat("Speed", 2);
 
-        if (!p_anim.GetBool("Pickup")) {
+        if (!p_anim.GetBool("Pickup") && powerups>0) {
             cmTimer = 1;
             cmBool = false;
         }
@@ -135,23 +138,27 @@ public class Player : MonoBehaviour {
 
         yield return new WaitForSeconds(effectDuration);
 
-        platformerCharacter2D.SetMaxSpeed(10f);
+        powerups--;
 
-        anim[0].speed = 0.5f;
-        anim[1].speed = 0.5f;
-        anim[2].speed = 0.5f;
-        anim[3].speed = 1f;
-        anim[4].speed = 1f;
-        anim[5].speed = 1f;
-        anim[6].speed = 1f;
-        anim[7].speed = 1f;
-        hud.multiplier = 1;
-        spwMG.speed = 5;
+        if (powerups == 0)
+        {
+            platformerCharacter2D.SetMaxSpeed(10f);
+            p_anim.SetBool("Pickup", false);
+            p_anim.SetFloat("Speed", 1);
+            anim[0].speed = 1f;
+            anim[1].speed = 1f;
+            anim[2].speed = 1f;
+            anim[3].speed = 1f;
+            anim[4].speed = 1f;
+            anim[5].speed = 1f;
+            anim[6].speed = 1f;
+            anim[7].speed = 1f;
+            hud.multiplier = 1;
+            spwMG.speed = 5;
+        }
 
-        p_anim.SetBool("Pickup", false);
-        p_anim.SetFloat("Speed", 1);
-
-        if (!p_anim.GetBool("Pickup")) {
+        if (!p_anim.GetBool("Pickup") && powerups == 0)
+        {
             cmTimer = 1;
             cmBool = true;
         }
